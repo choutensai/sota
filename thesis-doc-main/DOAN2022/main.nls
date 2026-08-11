@@ -1,0 +1,44 @@
+
+\begin{thenomenclature} 
+\nomgroup{K}
+  \item [{$\ddot{\theta}$}]\begingroup Gia tốc góc của vật.\nomeqref {0}\nompageref{ix}
+  \item [{$\Delta r_i$}]\begingroup Độ thay đổi cánh tay đòn giữa các lần đẩy thử.\nomeqref {0}\nompageref{ix}
+  \item [{$\dot{\theta}$}]\begingroup Vận tốc góc của vật.\nomeqref {0}\nompageref{ix}
+  \item [{$\gamma$}]\begingroup Hệ số phản ánh khả năng truyền mô men của vật liệu tiếp xúc.\nomeqref {0}\nompageref{ix}
+  \item [{$\lambda$}]\begingroup Hệ số chuẩn hoá chiều mô men.\nomeqref {0}\nompageref{ix}
+  \item [{$\mathbf{f}_r$}]\begingroup Vector lực đẩy của toàn bộ robot.\nomeqref {0}\nompageref{ix}
+  \item [{$\mathbf{G}$}]\begingroup Ma trận ánh xạ lực tiếp xúc sang wrench tại khối tâm.\nomeqref {0}\nompageref{ix}
+  \item [{$\mathbf{r}_i$}]\begingroup Cánh tay đòn từ COM đến tiếp xúc $i$.\nomeqref {0}\nompageref{ix}
+  \item [{$\mathbf{u}$}]\begingroup Vector cấu hình (vị trí tiếp xúc) của $n$ robot trên biên vật.\nomeqref {0}\nompageref{ix}
+  \item [{$\mathbf{w}$}]\begingroup Wrench tại khối tâm.\nomeqref {0}\nompageref{ix}
+  \item [{$\mathbf{w}_d$}]\begingroup Wrench mong muốn.\nomeqref {0}\nompageref{ix}
+  \item [{$\mathbf{w}_e$}]\begingroup Wrench tổng hợp tại khối tâm do các robot sinh ra.\nomeqref {0}\nompageref{ix}
+  \item [{$\mathbf{w}_i$}]\begingroup Wrench do tiếp xúc/robot $i$ tác dụng lên vật.\nomeqref {0}\nompageref{ix}
+  \item [{$\mathcal{U}$}]\begingroup Không gian vị trí của robot.\nomeqref {0}\nompageref{ix}
+  \item [{$\mu_k$}]\begingroup Hệ số ma sát động (Coulomb) tại tiếp xúc.\nomeqref {0}\nompageref{ix}
+  \item [{$\mu_s$}]\begingroup Hệ số ma sát tĩnh (Coulomb) tại tiếp xúc.\nomeqref {0}\nompageref{ix}
+  \item [{$\rho$}]\begingroup Hệ số tăng cường/phạt bậc hai trong ALM/ALPSO.\nomeqref {0}\nompageref{ix}
+  \item [{$\tau_{fr}$}]\begingroup Mô men ma sát quay (Coulomb/giới hạn ma sát quay).\nomeqref {0}\nompageref{ix}
+  \item [{$\theta(t)$}]\begingroup Góc quay của vật theo thời gian.\nomeqref {0}\nompageref{ix}
+  \item [{$d_{\min}$}]\begingroup Khoảng cách an toàn tối thiểu giữa các robot/tiếp xúc.\nomeqref {0}\nompageref{ix}
+  \item [{$f_i$}]\begingroup Độ lớn lực đẩy của robot $i$ (đẩy vuông góc cạnh tiếp xúc).\nomeqref {0}\nompageref{ix}
+  \item [{$f_{\max}$}]\begingroup Giới hạn lực đẩy cực đại.\nomeqref {0}\nompageref{ix}
+  \item [{$I$}]\begingroup Mô men quán tính quay của vật quanh COM.\nomeqref {0}\nompageref{ix}
+  \item [{$J(\mathbf{u})$}]\begingroup Hàm mục tiêu đánh giá cấu hình.\nomeqref {0}\nompageref{ix}
+  \item [{$J_r(\mathbf{u})$}]\begingroup Độ ổn định xoay của cấu hình.\nomeqref {0}\nompageref{ix}
+  \item [{$J_t(\mathbf{u})$}]\begingroup Độ ổn định tịnh tiến của cấu hình.\nomeqref {0}\nompageref{ix}
+  \item [{$L(\mathbf{u},\boldsymbol{\lambda},\rho)$}]\begingroup Hàm Augmented Lagrangian cho bài toán tối ưu ràng buộc.\nomeqref {0}\nompageref{ix}
+  \item [{$n$}]\begingroup Số lượng robot tham gia nhiệm vụ.\nomeqref {0}\nompageref{ix}
+\nomgroup{T}
+  \item [{ALM}]\begingroup Augmented Lagrangian Method – Phương pháp Lagrangian tăng cường.\nomeqref {0}\nompageref{ix}
+  \item [{ALPSO}]\begingroup Augmented Lagrangian PSO – Tối ưu bầy đàn hạt phân tán kết hợp Lagrangian tăng cường.\nomeqref {0}\nompageref{ix}
+  \item [{COM}]\begingroup Center of Mass – Trọng tâm của vật.\nomeqref {0}\nompageref{ix}
+  \item [{DALPSO}]\begingroup Distributed ALPSO – Tối ưu bầy đàn hạt kết hợp Lagrangian tăng cường.\nomeqref {0}\nompageref{ix}
+  \item [{DPSO}]\begingroup Distributed PSO – Tối ưu bầy đàn hạt phân tán.\nomeqref {0}\nompageref{ix}
+  \item [{GWS}]\begingroup Grasp Wrench Space – Không gian wrench khả thi của cấu hình tiếp xúc.\nomeqref {0}\nompageref{ix}
+  \item [{LS}]\begingroup Least Squares – Phương pháp bình phương tối thiểu.\nomeqref {0}\nompageref{ix}
+  \item [{MRS}]\begingroup Multi-Robot System – Hệ thống đa robot.\nomeqref {0}\nompageref{ix}
+  \item [{PSO}]\begingroup Particle Swarm Optimization – Tối ưu bầy đàn hạt.\nomeqref {0}\nompageref{ix}
+  \item [{QP}]\begingroup Quadratic Programming – Quy hoạch toàn phương.\nomeqref {0}\nompageref{ix}
+
+\end{thenomenclature}

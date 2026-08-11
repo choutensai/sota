@@ -1,0 +1,26 @@
+\begin{thebibliography}{1}
+\newcommand{\enquote}[1]{``#1''}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem{Schedlinski2001Survey}
+Carsten Schedlinski và Michael Link (2001), \enquote{A survey of current
+  inertia parameter identification methods}. \emph{Mechanical Systems and
+  Signal Processing}, tập~15, số~1, tr. 189--211,
+  \doi{10.1006/mssp.2000.1345}.
+
+\bibitem{liu2022inertialsurvey}
+Han Liu et~al. (2022), \enquote{Estimation and exploitation of objects'
+  inertial parameters in robotic grasping and manipulation: A survey}.
+  \emph{IEEE Transactions on Automation Science and Engineering}.
+
+\bibitem{Mirtich1996MassProperties}
+Brian Mirtich (1996), \enquote{Fast and accurate computation of polyhedral mass
+  properties}. \emph{Journal of Graphics Tools}, tập~1, số~2, tr. 31--50,
+  \doi{10.1080/10867651.1996.10487458}.
+
+\end{thebibliography}

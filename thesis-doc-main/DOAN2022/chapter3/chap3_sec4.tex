@@ -1,0 +1,110 @@
+\section{Thuật toán tối ưu bầy đàn hạt dùng Lagrangian tăng cường phân tán}
+Thuật toán tối ưu bầy đàn hạt sử dụng Lagrangian tăng cường phân tán (DALPSO) là một biến thể của thuật toán tối ưu bầy đàn hạt PSO, trong đó phương pháp Lagrangian tăng cường được sử dụng để xử lý ràng buộc một cách hiệu quả, kết hợp mới cơ chế phân tán để để triển khai theo mô hình phi tập trung để xử các bài toán tối ưu phi tuyến, phi lồi và có ràng buộc phức tạp. Phần này sẽ trình bày chi tiết về thuật toán PSO gốc, phương pháp Lagrangian tăng cường và cơ chế phân tán.
+
+\subsection{Thuật toán tối ưu bầy đàn hạt}
+Thuật toán Tối ưu Bầy đàn (Particle Swarm Optimization - PSO) được Kennedy và Eberhart giới thiệu năm 1995 \cite{kennedy1995pso}, dựa trên việc mô phỏng hành vi tìm kiếm thức ăn của các quần thể sinh vật trong tự nhiên như đàn chim hoặc đàn cá. PSO thuộc nhóm thuật toán tối ưu meta-heuristic, không yêu cầu đạo hàm, và đặc biệt phù hợp cho các bài toán tối ưu phi tuyến, không lồi, hoặc có nhiều cực trị địa phương.
+
+Trong PSO, mỗi nghiệm ứng viên được mô hình hóa dưới dạng một hạt (particle) di chuyển trong không gian nghiệm. Quá trình cập nhật vị trí của hạt được điều khiển bởi sự kết hợp của kinh nghiệm cá nhân $\mathbf{p_{\text{best}}}$ và kinh nghiệm toàn bầy $\mathbf{g_{\text{best}}}$. Cơ chế này cho phép PSO thực hiện đồng thời hai mục tiêu là khám phá không gian nghiệm và khai thác các vùng có lời giải tốt. Xét bài toán tối ưu tổng quát cho hàm $f(x)$:
+
+\begin{equation}
+    \min_{x \in \mathbb{R}^n} f(x).
+\label{eq:fmin}
+\end{equation}
+
+Để bắt đầu thuật toán, trước hết một quần thể gồm \(N\) hạt được khởi tạo ngẫu nhiên. Đối với mỗi hạt thứ \(i\), PSO lưu trữ các đại lượng đặc trưng:
+\begin{itemize}
+    \item \(\mathbf{x}_i^k \in \mathbb{R}^n\): vị trí tại lần lặp \(k\).
+    \item \(\mathbf{v}_i^k \in \mathbb{R}^n\): vận tốc tại lần lặp \(k\).
+    \item \(\mathbf{p}_i \in \mathbb{R}^n\): nghiệm tốt nhất mà hạt từng đạt được.
+    \item \(\mathbf{g} \in \mathbb{R}^n\): nghiệm tốt nhất của toàn bộ quần thể.
+\end{itemize}
+
+Qua mỗi vòng lặp, giá trị $\mathbf{p}_i$ của từng hạt được cập nhật ngay sau khi hạt đó đánh giá giá trị hàm mục tiêu tại vị trí mới còn giá trị $\mathbf{g}$ được cập nhật sau khi toàn bộ các hạt trong quần thể cập nhật $\mathbf{p}_i$. Vận tốc hạt thứ \(i\) tại vòng lặp \(k+1\) được cập nhật theo công thức:
+\begin{equation}
+    \mathbf{v}_i^{k+1} = \omega \mathbf{v}_i^{k} + c_1 r_1 (\mathbf{p}_i - \mathbf{x}_i^{k}) + c_2 r_2 (\mathbf{g} - \mathbf{x}_i^{k}),
+\label{eq:vpso}
+\end{equation}
+trong đó $\omega$ là hệ số quán tính (inertia weight), $c_1$ và $c_2$ lần lượt là hệ số nhận thức cá nhân (cognitive) và xã hội (social), còn $r_1, r_2 \sim U[0,1]$ là các số ngẫu nhiên sinh mới mỗi vòng lặp.
+
+Ý nghĩa của từng thành phần trong công thức (\ref{eq:vpso}) như sau:
+\begin{itemize}
+    \item \(\omega \mathbf{v}_i^k\): Thành phần quán tính duy trì hướng chuyển động hiện tại của hạt. Khi hệ số \(\omega\) lớn, hạt có xu hướng tiếp tục di chuyển theo vận tốc cũ, giúp tăng khả năng khám phá không gian nghiệm. Ngược lại, giá trị \(\omega\) nhỏ khiến hạt dễ dàng bị ảnh hưởng bởi các thành phần còn lại và hội tụ nhanh hơn, nhưng cũng dễ rơi vào cực trị địa phương.
+    \item \(c_1 r_1 (\mathbf{p}_i - \mathbf{x}_i^{k})\): Thành phần nhận thức phản ánh kinh nghiệm cá nhân của hạt, tức là kéo hạt quay lại vị trí tốt nhất mà chính nó từng đạt được. Hệ số \(c_1\) điều chỉnh mức độ ảnh hưởng của thành phần này, trong khi số ngẫu nhiên \(r_1\) giúp tạo sự đa dạng trong hướng tìm kiếm.
+    \item \(c_2 r_2 (\mathbf{g} - \mathbf{x}_i^{k})\): Thành phần xã hội thể hiện xu hướng học hỏi từ quần thể, tức là kéo hạt hướng về nghiệm tốt nhất mà toàn bộ đàn đã tìm được. Hệ số \(c_2\) quy định mức độ ảnh hưởng của thông tin toàn cục, còn số ngẫu nhiên \(r_2\) giúp giảm khả năng hội tụ quá sớm.
+\end{itemize}
+
+Sau khi vận tốc được xác định, vị trí hạt thứ \(i\) tại vòng lặp \(k+1\) được cập nhật theo công thức:
+\begin{equation}
+    \mathbf{x}_i^{k+1} = \mathbf{x}_i^{k} + \mathbf{v}_i^{k+1}
+\label{eq:ppso}
+\end{equation}
+
+Để tránh việc hạt di chuyển quá xa, vận tốc thường được giới hạn bởi một vận tốc tối đa $v_{\max}$:
+\begin{equation}
+    \|\mathbf{v}_i^{k+1}\| \le v_{\max}.
+\label{eq:lmppso}
+\end{equation}
+
+
+
+Mặc dù sở hữu nhiều ưu điểm như khả năng tìm kiếm toàn cục tốt, không yêu cầu đạo hàm, dễ cài đặt và có tốc độ hội tụ nhanh trong giai đoạn đầu, PSO thuần vẫn tồn tại những hạn chế đáng kể khiến nó chưa phù hợp cho các bài toán tối ưu phức tạp có ràng buộc. Trước hết nó không có cơ chế nội tại để xử lý các ràng buộc hình học và đảm bảo ràng buộc vật lý, thứ rất quan trọng trong bài toán đẩy vật. Các phương pháp bổ sung truyền thống như hàm phạt thường nhạy với hệ số điều chỉnh và dễ dẫn đến nghiệm không khả thi. Ngoài ra PSO còn dễ rơi vào cực trị địa phương khi quần thể mất đa dạng hoặc khi nghiệm bị kẹt gần biên ràng buộc. Các phương pháp Lagrangian tăng cường ở mục sau được sử dụng để khắc phục những   hạn chế này. 
+\subsection{Phương pháp Lagrangian tăng cường}
+
+Phương pháp Lagrangian tăng cường (Augmented Lagrangian Method - ALM) là một kỹ thuật tối ưu dùng để giải các bài toán tối ưu có ràng buộc bằng cách kết hợp ý tưởng từ Lagrangian cổ điển (classical Lagrangian method) phương pháp hàm phạt bậc hai (quadratic penalty) bằng cách bổ sung các thành phần phạt dạng bình phương vào Lagrangian gốc. Nhờ đó, ALM xử lý ràng buộc tốt hơn so với Lagrangian chuẩn, đồng thời tránh được nhược điểm của phương pháp phạt truyền thống (penalty method), vốn yêu cầu hệ số phạt rất lớn và gây mất ổn định. ALM là một trong những phương pháp tối ưu ràng buộc hiệu quả nhất hiện nay,không yêu cầu đạo hàm, và phù hợp để dùng chung với các thuật toán heuristic như PSO, GA, DE, $\ldots$
+
+Xét bài toán tối ưu có ràng buộc ưu dạng:
+\begin{equation}
+\begin{aligned}
+    \min_{x} \quad & f(x) \\
+    \text{s.t.} \quad & g_i(x) = 0, \quad i = 1,\ldots,m, \\
+                      & h_j(x) \le 0, \quad j = 1,\ldots,p.
+\end{aligned}
+\end{equation}
+Hàm Lagrangian tăng cường được định nghĩa như sau:
+\begin{equation}
+    \mathcal{L}_{\rho}(x,\lambda,\mu) = f(x) + \sum_{i=1}^{m} \left[ \lambda_i g_i(x) + \frac{\rho}{2} g_i(x)^2 \right] + \sum_{j=1}^{p} \left[ \mu_j\, \max(0,h_j(x)) + \frac{\rho}{2} \max(0,h_j(x))^2 \right],
+\label{eq:al}
+\end{equation}
+trong đó \(\lambda_i\) và \(\mu_j\) là các bội số Lagrange, còn \(\rho > 0\) là hệ số tăng cường.
+
+Sau mỗi vòng lặp, các bội số Lagrange và hệ số tăng cường được cập nhật theo quy tắc: được cập nhật theo:
+\begin{equation}
+    \lambda_i^{k+1} = \lambda_i^{k} + \rho\, g_i(x^{k}),
+\label{eq:lambda}
+\end{equation}
+\begin{equation}
+    \mu_j^{k+1} = \max\!\left( 0,\; \mu_j^{k} + \rho\, h_j(x^{k}) \right),
+\label{eq:mu}
+\end{equation}
+\begin{equation}
+    \rho^{k+1} = \alpha\, \rho^{k}, \qquad \alpha > 1.
+\label{eq:rho}
+\end{equation}
+
+Việc kết hợp phương pháp ALM với thuật toán PSO hình thành thuật toán ALPSO, mang lại một khuôn khổ tối ưu ràng buộc mạnh mẽ hơn nhiều so với PSO truyền thống, giúp xử lý hiệu quả các ràng buộc hình học và vật lý phức tạp đặc biệt quan trọng trong tối ưu đội hình đa robot, nơi nghiệm phải thỏa mãn các điều kiện như tránh va chạm, tiếp xúc hợp lệ hoặc tạo được wrench mong muốn. Ưu điểm nổi bật nhất của ALPSO nằm ở việc ALM “nhúng” các ràng buộc trực tiếp vào hàm mục tiêu thông qua các thành phần phạt bậc hai và hệ bội số Lagrange. Điều này cho phép PSO tìm kiếm nghiệm khả thi một cách tự nhiên mà không cần hệ số penalty cực lớn như trong phương pháp phạt truyền thống, tránh được hiện tượng mất ổn định và làm phẳng hàm mục tiêu. Ngoài ra, các bội số Lagrange được cập nhật theo mô hình ALM giúp quần thể dần tiến vào vùng thỏa ràng buộc, từ đó tăng tốc hội tụ và giảm khả năng nghiệm bị “bật” ra khỏi miền khả thi.
+
+\subsection{Cơ chế phân tán}
+PSO phân tán (Distributed PSO - DPSO) là một nhánh biến thể của thuật toán PSO truyền thống. Khác với PSO thông thường sử dạng tập trung (centralized PSO), quần thể được chia thành nhiều sub-swarm (islands / sub-swarms), chạy song song và trao đổi thông tin giới hạn theo chu kỳ. Điều không chỉ tăng hiệu năng tính toán mà còn giúp tránh kẹt cực trị địa phương và nâng cao độ bền của thuật toán. Trong DPSO, quần thể ban đầu được chia thành $M$ quần thể con (sub-swarm) độc lập: $\mathcal{P} = \{\mathcal{S}_1, \mathcal{S}_2, \ldots, \mathcal{S}_M\}$. Mỗi sub-swarm chạy PSO độc lập, vẫn duy trì các đại lượng đặc trưng của hạt về vị trí, vận tốc, nghiệm tốt nhất mà hạt từng đạt được. Nghiệm tốt nhất của quần thể trong mỗi sub-swarm lúc này được gọi là nghiệm cục bộ tốt nhất của sub-swarm $\mathbf{l_{\text{best}}}$ (local best). Khi cần đánh giá nghiệm tốt nhất của toàn bộ hệ DPSO tại một thời điểm hoặc khi kết thúc, ta có thể định nghĩa:
+\begin{equation}
+    \mathbf{g_{\text{best}}} = \arg\min_{m} f(\mathbf{l_{\text{best,m}}})
+\label{eq:gbest}
+\end{equation}
+
+Sau mỗi $T_m$ vòng lặp hoặc khi thỏa mãn một điều kiện kích hoạt, các sub-swarm thực hiện trao đổi thông tin. Loại thông tin được trao đổi có thể khác nhau tùy thuộc vào cách lựa chọn khai thác thông tin, phổ biến nhất là trao đổi $\mathbf{l_{\text{best}}}$ để tính $\mathbf{g_{\text{best}}}$ theo công thức (\ref{eq:gbest}) và có thể dùng chính giá trị này để cập nhật vận tốc theo (\ref{eq:vpso}), hoặc có thể thêm một thành phần về nhận thức toàn cục trên tất cả các swarm vào công thức cập nhật vận tốc nhằm giúp các bầy hướng đến nghiệm tốt nhất toàn hệ thống, tránh cực tiểu địa phương. Khi đó công thức cập nhật vận tốc mới là:
+\begin{equation}
+    \mathbf{v}_i^{k+1} = \omega \mathbf{v}_i^{k} + c_1 r_1 (\mathbf{p}_i - \mathbf{x}_i^{k}) + c_2 r_2 (\mathbf{l}_i - \mathbf{x}_i^{k}) + c_3 r_3 (\mathbf{g} - \mathbf{x}_i^{k}) 
+\label{eq:vpso2}
+\end{equation}
+
+
+Cách các particle (agent) chia sẻ thông tin với nhau được định nghĩa bằng topology. Đây là yếu tố quan trọng ảnh hưởng đến tốc độ hội tụ và khả năng tránh cực trị cục bộ. Các loại thường sử dụng bao gồm: 
+\begin{itemize}
+    \item Global topology (Gbest / Fully-connected): Mỗi particle có thể nhìn thấy thông tin tốt nhất toàn swarm, tức là $\mathbf{g_{\text{best}}}$.
+    \item Local topology (Lbest / Ring / Von Neumann): Mỗi particle chỉ chia sẻ thông tin với một nhóm nhỏ các hàng xóm (neighbor), như 2-k hàng xóm theo vòng tròn theo Ring topo và 4 hàng xóm liền kề trong lưới 2D với Von Neumann topo.
+    \item Star topology (Centralized DPSO): Có một node trung tâm nhận thông tin pbest của tất cả particle và gửi lại cho swarm.
+    \item Dynamic topology: Topology thay đổi trong quá trình chạy để cân bằng giữa đa dạng và hội tụ.
+\end{itemize}
+
+Ngoài ra thì với cấu trúc phân tán hoàn toàn không có node trung tâm, các sub-swarm chỉ giao tiếp cục bộ với nhau hoặc với swarm khác theo thời gian, rất thích hợp cho môi trường phân tán và tránh cực tiểu địa phương. Trong một số trường hợp, cơ chế di cư (migration) còn được sử dụng nhằm tăng tính đa dạng trong tìm kiếm và tránh cực tiểu địa phương. Khi này các quân thể con không chỉ phát thông tin về $\mathbf{g_{\text{best}}}$ mà còn trao đổi chéo các hạt với nhau. Trong \cite{reyes2006multiswarm} hạt tốt nhất của sub-swarm được gửi sang subswarm khác thay thế hạt tệ nhất của sub-swarm nhận, hay thậm chí như trong \cite{yuan2011multi}, độ đình trệ (stagnation) của nghiệm tốt nhất toàn cầu được theo dõi để tiến hành tái cấu trúc nhóm (regrouping) sub-swarms để chia sẻ thông tin tốt giữa nhóm có nghiệm tốt với nhóm chưa tốt.
+
+Có thể nói, DPSO là một cách tiếp cận rất linh hoạt khi có thể lựa chọn các công thức cập nhật và cơ chế truyền thông khác nhau để thích nghi với bài toán đề ra. Đặc biệt với các hệ thống phân tán như hệ thống đa robot, nó thể hiện ưu điểm của mình một cách mạnh mẽ nhất khi tận dụng tối đa khả năng xử lý song song trên từng đơn vị mà không cần khối xử lý trung tâm, giúp giảm thời gian tính toán thực tế đi đáng. Kết hợp với ALPSO được nêu trên, ta có được kỹ thuật DALPSO vừa sở hữu khả năng xử lý tốt các ràng buộc, vừa giảm thời gian tính toán và tránh các cực trị địa phương. 

@@ -1,0 +1,8 @@
+\chapter*{TÓM TẮT}
+\addcontentsline{toc}{chapter}{TÓM TẮT}
+\fontsize{13}{15}\selectfont
+
+\textbf{Tóm tắt:} Đồ án trình bày giải pháp xây dựng cấu trúc đội hình và phối hợp cùng đẩy của hệ thống đa robot phân tán, với mục tiêu là xác định được cấu hình ổn định cho hệ robot tương ứng với các wrench (lực và mô men) mong muốn, cũng như phối hợp đẩy cùng nhau để tạo được ra các wrench này. Thay vì chỉ đánh giá đội hình dựa trên các yếu tố hình học đơn thuần, đồ án lựa chọn một phương pháp tiếp cận khác là đánh giá dựa trên không gian làm việc Wrench Space, đưa thêm vào yếu tố về lực và mô men vào hàm mục tiêu, nhằm tạo ra đội hình ổn định nhất để sinh ra wrench mong muốn khi biết được lực pháp tuyến tối đa mà mỗi robot có thể tác động lên vật. Để giải bài toán tối ưu tìm cấu hình này, đồ án sử dụng thuật toán tối ưu bầy đàn hạt dùng Lagrangian tăng cường phân tán (Distributed Augmented Lagrangian Particle Swarm Optimization - DALPSO) để giải cục bộ trên từng robot, đảm bảo hệ robot đồng nhất về lời giải. Sau khi có được cấu hình tương ứng với wrench mong muốn, mỗi robot sẽ tiếp tục giải một bài toán tối ưu cục bộ khác có hàm mục tiêu dạng bậc hai với ràng buộc tuyến tính (Quadratic problem - QP) để xác định lực pháp tuyến mà nó cần tác động vào vật thể, sao cho tổng hợp lực, mô men của toàn hệ sinh ra đúng bằng wrench mong muốn. Đồ án cũng đề xuất một phương pháp nhằm ước lượng vị trí trọng tâm của vật thể, thứ mà đa phần các nghiên cứu trước đây đều mặc định là biết trước, tuy nhiên lại không dễ dàng có được trong thực tế bằng cách đo lường giá trị gia tốc góc qua các lần đẩy thử trong pha khám phá. 
+
+\textbf{\textit{Từ khóa: }} \textit{Hệ thống đa robot phân tán, wrench space, DALPSO, quadratic problem, vị trí trọng
+tâm.}
