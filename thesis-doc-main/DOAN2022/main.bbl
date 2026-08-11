@@ -18,6 +18,11 @@ Han Liu et~al. (2022), \enquote{Estimation and exploitation of objects'
   inertial parameters in robotic grasping and manipulation: A survey}.
   \emph{IEEE Transactions on Automation Science and Engineering}.
 
+\bibitem{Chien1986Identification}
+Chiun-Hong Chien và J.~K. Aggarwal (1986), \enquote{Identification of 3d
+  objects from multiple silhouettes using quadtrees/octrees}. \emph{Computer
+  Vision, Graphics, and Image Processing}, tập~36, tr. 256--273.
+
 \bibitem{Mirtich1996MassProperties}
 Brian Mirtich (1996), \enquote{Fast and accurate computation of polyhedral mass
   properties}. \emph{Journal of Graphics Tools}, tập~1, số~2, tr. 31--50,
