@@ -28,4 +28,30 @@ Brian Mirtich (1996), \enquote{Fast and accurate computation of polyhedral mass
   properties}. \emph{Journal of Graphics Tools}, tập~1, số~2, tr. 31--50,
   \doi{10.1080/10867651.1996.10487458}.
 
+\bibitem{Khosla1985Parameter}
+Pradeep~K. Khosla và Takeo Kanade (1985), \enquote{Parameter identification of
+  robot dynamics}. Trong \enquote{Proceedings of the 24th IEEE Conference on
+  Decision and Control}, tr. 1754--1760, \doi{10.1109/CDC.1985.268838}.
+
+\bibitem{Swevers2007Dynamic}
+Jan Swevers, Walter Verdonck và Joris De~Schutter (2007), \enquote{Dynamic
+  model identification for industrial robots}. \emph{IEEE Control Systems
+  Magazine}, tập~27, số~5, tr. 58--71, \doi{10.1109/MCS.2007.904659}.
+
+\bibitem{Gautier1997Dynamic}
+Maxime Gautier (1997), \enquote{Dynamic identification of robots with power
+  model}. Trong \enquote{Proceedings of the IEEE International Conference on
+  Robotics and Automation}, tập~3, tr. 1922--1927.
+
+\bibitem{Dong2018Payload}
+Y.~Dong, T.~Ren, K.~Chen và D.~Wu (2018), \enquote{An efficient robot payload
+  identification method for industrial application}. \emph{Industrial Robot: An
+  International Journal}, tập~45, số~4, tr. 505--515.
+
+\bibitem{Mellinger2011Aerial}
+Daniel Mellinger, Quentin Lindsey, Michael Shomin và Vijay Kumar (2011),
+  \enquote{Design, modeling, estimation and control for aerial grasping and
+  manipulation}. Trong \enquote{2011 IEEE/RSJ International Conference on
+  Intelligent Robots and Systems}, tr. 2668--2673 (IEEE).
+
 \end{thebibliography}
