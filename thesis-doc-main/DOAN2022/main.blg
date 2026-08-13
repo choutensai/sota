@@ -7,44 +7,44 @@ Reallocating 'name_of_file' (item size: 1) to 12 items.
 The style file: vietnumeric.bst
 Reallocating 'name_of_file' (item size: 1) to 10 items.
 Database file #1: reference.bib
-You've used 9 entries,
+You've used 10 entries,
             2540 wiz_defined-function locations,
-            618 strings with 6523 characters,
-and the built_in function-call counts, 8428 in all, are:
-= -- 1077
-> -- 72
-< -- 18
-+ -- 80
-- -- 21
-* -- 335
-:= -- 579
-add.period$ -- 18
-call.type$ -- 9
-change.case$ -- 15
+            626 strings with 6728 characters,
+and the built_in function-call counts, 9566 in all, are:
+= -- 1232
+> -- 79
+< -- 21
++ -- 91
+- -- 23
+* -- 379
+:= -- 651
+add.period$ -- 20
+call.type$ -- 10
+change.case$ -- 16
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 1066
-empty$ -- 522
-format.name$ -- 28
-if$ -- 1827
+cite$ -- 10
+duplicate$ -- 1211
+empty$ -- 584
+format.name$ -- 31
+if$ -- 2072
 int.to.chr$ -- 0
-int.to.str$ -- 9
-missing$ -- 94
-newline$ -- 36
-num.names$ -- 9
-pop$ -- 378
+int.to.str$ -- 10
+missing$ -- 104
+newline$ -- 39
+num.names$ -- 10
+pop$ -- 438
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 624
+skip$ -- 702
 stack$ -- 0
-substring$ -- 462
-swap$ -- 976
-text.length$ -- 18
+substring$ -- 532
+swap$ -- 1118
+text.length$ -- 21
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 41
-width$ -- 10
-write$ -- 94
+while$ -- 46
+width$ -- 12
+write$ -- 103

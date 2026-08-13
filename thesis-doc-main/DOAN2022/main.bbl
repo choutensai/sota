@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -53,5 +53,10 @@ Daniel Mellinger, Quentin Lindsey, Michael Shomin và Vijay Kumar (2011),
   \enquote{Design, modeling, estimation and control for aerial grasping and
   manipulation}. Trong \enquote{2011 IEEE/RSJ International Conference on
   Intelligent Robots and Systems}, tr. 2668--2673 (IEEE).
+
+\bibitem{Lee2017AerialTransportation}
+H.~Lee và H.~J. Kim (2017), \enquote{Estimation, control, and planning for
+  autonomous aerial transportation}. \emph{IEEE Transactions on Industrial
+  Electronics}, tập~64, số~4, tr. 3369--3379.
 
 \end{thebibliography}
