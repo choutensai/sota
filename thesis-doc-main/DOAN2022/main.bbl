@@ -65,15 +65,29 @@ Y.~Yu, T.~Arima và S.~Tsujio (2005), \enquote{Estimation of object inertia
   IEEE International Conference on Robotics and Automation}, tr. 1657--1662
   (IEEE).
 
-\bibitem{Nowak2008Generalized}
-Robert Nowak (2008), \enquote{Generalized binary search}. Trong \enquote{2008
-  46th Annual Allerton Conference on Communication, Control, and Computing},
-  tr. 568--574 (IEEE), \doi{10.1109/ALLERTON.2008.4797609}.
+\bibitem{Franchi2014Distributed}
+Antonio Franchi, Antonio Petitti và Alessandro Rizzo (2014),
+  \enquote{Distributed estimation of the inertial parameters of an unknown load
+  via multi-robot manipulation}. Trong \enquote{2014 IEEE 53rd Annual
+  Conference on Decision and Control (CDC)}, tr. 6111--6116 (IEEE),
+  \doi{10.1109/CDC.2014.7040346}.
+
+\bibitem{Franchi2016Decentralized}
+Antonio Franchi, Antonio Petitti và Alessandro Rizzo (2016),
+  \enquote{Decentralized parameter estimation and observation for cooperative
+  mobile manipulation of an unknown load using noisy measurements}.
+  \emph{Robotica}, tập~34, số~3, tr. 444--461,
+  \doi{10.1017/S026357471400123X}.
 
 \bibitem{Mason1986Pushing}
 Matthew~T. Mason (1986), \enquote{Mechanics and planning of manipulator pushing
   operations}. \emph{The International Journal of Robotics Research}, tập~5,
   số~3, tr. 53--71, \doi{10.1177/027836498600500303}.
+
+\bibitem{Nowak2008Generalized}
+Robert Nowak (2008), \enquote{Generalized binary search}. Trong \enquote{2008
+  46th Annual Allerton Conference on Communication, Control, and Computing},
+  tr. 568--574 (IEEE), \doi{10.1109/ALLERTON.2008.4797609}.
 
 \bibitem{Hyland2023CoM}
 Steven~M. Hyland, Jing Xiao và Cagdas~D. Onal (2023), \enquote{Predicting
@@ -96,18 +110,18 @@ Mitsunori Uemura, Shota Tsujikawa, Masayoshi Suefuji và Hikaru Arita (2024),
   \emph{Advanced Robotics}, tập~38, số~22, tr. 1567--1578,
   \doi{10.1080/01691864.2024.2420094}.
 
-\bibitem{Franchi2014Distributed}
-Antonio Franchi, Antonio Petitti và Alessandro Rizzo (2014),
-  \enquote{Distributed estimation of the inertial parameters of an unknown load
-  via multi-robot manipulation}. Trong \enquote{2014 IEEE 53rd Annual
-  Conference on Decision and Control (CDC)}, tr. 6111--6116 (IEEE),
-  \doi{10.1109/CDC.2014.7040346}.
+\bibitem{Gao2023HighSpeed}
+Ziyan Gao, Armagan Elibol và Nak~Young Chong (2023), \enquote{Estimating the
+  center of mass of an object with non-uniform density via high-speed pushing}.
+  Trong \enquote{2023 IEEE 19th International Conference on Automation Science
+  and Engineering (CASE)}, tr. 1--8 (IEEE),
+  \doi{10.1109/CASE56687.2023.10260431}.
 
-\bibitem{Franchi2016Decentralized}
-Antonio Franchi, Antonio Petitti và Alessandro Rizzo (2016),
-  \enquote{Decentralized parameter estimation and observation for cooperative
-  mobile manipulation of an unknown load using noisy measurements}.
-  \emph{Robotica}, tập~34, số~3, tr. 444--461,
-  \doi{10.1017/S026357471400123X}.
+\bibitem{Mavrakis2020DataDriven}
+Nikos Mavrakis, Amir~M. Ghalamzan~E. và Rustam Stolkin (2020),
+  \enquote{Estimating an object's inertial parameters by robotic pushing: A
+  data-driven approach}. Trong \enquote{2020 IEEE/RSJ International Conference
+  on Intelligent Robots and Systems (IROS)}, tr. 9537--9544 (IEEE),
+  \doi{10.1109/IROS45743.2020.9341112}.
 
 \end{thebibliography}

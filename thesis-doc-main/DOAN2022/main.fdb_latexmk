@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1786679751.60571 "main.aux" "main.bbl" "main" 1786681753.25815 0
-  "./reference.bib" 1786679051 6635 eef045d05989cc7640a0932eb41e24f9 ""
+["bibtex main"] 1787021824.58177 "main.aux" "main.bbl" "main" 1787022780.03222 0
+  "./reference.bib" 1787021672 7524 dfc397473e7d8f3ea82ef8e11882e35c ""
   "./vietnumeric.bst" 1785833949 27741 78a4462118e6117289e7846c163a2183 ""
-  "main.aux" 1786681752 2021 12e66a7252aefb92e339d34a0ad3ffbb "pdflatex"
-  "overview/title.aux" 1786681752 1362 6fd2fda37e0ddcdf499c49bc2aeb7f31 "pdflatex"
+  "main.aux" 1787022779 2151 42a94c8270f683b1485ab1b2478586dc "pdflatex"
+  "overview/title.aux" 1787022779 1362 6fd2fda37e0ddcdf499c49bc2aeb7f31 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1786681750.5693 "c:/Users/HP Omen/Desktop/SOTA/sota/thesis-doc-main/DOAN2022/main.tex" "main.pdf" "main" 1786681753.2592 0
+["pdflatex"] 1787022777.38674 "c:/Users/HP Omen/Desktop/SOTA/sota/thesis-doc-main/DOAN2022/main.tex" "main.pdf" "main" 1787022780.0331 0
   "C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-t5.enc" 1256929440 2902 39ef7ea122fd143131d26a653f4643ee ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1233951854 916 f87d7c45f9c908e672703b83b72241a3 ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/symbols/msam7.tfm" 1233951854 928 2dc8d444221b7a635bb58038579b861a ""
@@ -223,14 +223,14 @@
   "C:/Program Files/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
   "C:/Users/HP Omen/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1778657161 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/HP Omen/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1785834816 13323427 fff3e7c555a882e07ef631cedeca4381 ""
-  "SOA/SOA_01.tex" 1786681749 6530 2c7c72ee38c14a43bb82e4b11f42e3e4 ""
+  "SOA/SOA_01.tex" 1787022776 7345 a03443873b5cf2397e0c90e93303ca14 ""
   "c:/Users/HP Omen/Desktop/SOTA/sota/thesis-doc-main/DOAN2022/main.tex" 1786074248 2382 8023b70550ea21d720174a2004f20349 ""
-  "main-frn.tex" 1786681752 450 968cc1df2af3d8a37a4f11a0fed4da16 "pdflatex"
-  "main.aux" 1786681752 2021 12e66a7252aefb92e339d34a0ad3ffbb "pdflatex"
-  "main.bbl" 1786679751 5505 fac08ba73d87df8b92aaa892949ad6cf "bibtex main"
-  "main.out" 1786681752 367 cc88c53c18093677739dc8e2a0d8046d "pdflatex"
+  "main-frn.tex" 1787022779 450 968cc1df2af3d8a37a4f11a0fed4da16 "pdflatex"
+  "main.aux" 1787022779 2151 42a94c8270f683b1485ab1b2478586dc "pdflatex"
+  "main.bbl" 1787021824 6230 a2a52b17dda3126bd87f976b39cc926e "bibtex main"
+  "main.out" 1787022779 367 cc88c53c18093677739dc8e2a0d8046d "pdflatex"
   "main.tex" 1786074248 2382 8023b70550ea21d720174a2004f20349 ""
-  "overview/title.aux" 1786681752 1362 6fd2fda37e0ddcdf499c49bc2aeb7f31 "pdflatex"
+  "overview/title.aux" 1787022779 1362 6fd2fda37e0ddcdf499c49bc2aeb7f31 "pdflatex"
   "overview/title.tex" 1785833950 1441 c1df2e8fe070ade451ff6029333fbe65 ""
   "overview/uet.png" 1785833950 189995 2e817cad2bf80a98dfaa1b774217c6b7 ""
   (generated)

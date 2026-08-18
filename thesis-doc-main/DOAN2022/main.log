@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.8.4)  14 AUG 2026 11:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.8.4)  18 AUG 2026 10:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1150,18 +1150,53 @@ Overfull \hbox (19.89497pt too wide) in paragraph at lines 8--9
  []
 
 
-Overfull \hbox (9.51509pt too wide) in paragraph at lines 8--9
-\T5/lmr/m/n/13 of reducing the search space through successive bisection, Uemura et al. [[]] presented
+Overfull \hbox (24.81473pt too wide) in paragraph at lines 8--9
+\T5/lmr/m/n/13 with their intersection determining the CoM. Franchi et al.[[]] developed a decentralized
  []
 
 
-Overfull \hbox (8.38216pt too wide) in paragraph at lines 8--9
-\T5/lmr/m/n/13 a a dynamic control method utilizing a nonlinear feedback control law to continuously
+Overfull \hbox (13.26913pt too wide) in paragraph at lines 8--9
+\T5/lmr/m/n/13 estimation of the unknown inertial properties. The method was subsequently extended
  []
 
-[2])
-Underfull \hbox (badness 10000) in paragraph at lines 10--93
+[2]
+Overfull \hbox (3.08965pt too wide) in paragraph at lines 10--11
+[]\T5/lmr/m/n/13 Another emerging line of research focuses on CoM estimation without requiring
+ []
 
+
+Overfull \hbox (4.77042pt too wide) in paragraph at lines 10--11
+\T5/lmr/m/n/13 Voting Theorem [[]], which establishes a geometric relationship between the pushing
+ []
+
+)
+Overfull \hbox (13.18658pt too wide) in paragraph at lines 12--93
+\T5/lmr/m/n/13 introduce a force-sensor-free exploratory framework that integrates high-speed robotic
+ []
+
+
+Overfull \hbox (7.06766pt too wide) in paragraph at lines 12--93
+\T5/lmr/m/n/13 introduces a data-driven framework that estimates an object's 2D inertial parameters
+ []
+
+
+Overfull \hbox (6.35379pt too wide) in paragraph at lines 12--93
+\T5/lmr/m/n/13 by training a Multi-Output Regression Random Forest on physical features extracted
+ []
+
+
+Overfull \hbox (4.88965pt too wide) in paragraph at lines 12--93
+\T5/lmr/m/n/13 from a single robotic push. By combining analytical pushing mechanics with machine
+ []
+
+
+Overfull \hbox (3.07692pt too wide) in paragraph at lines 12--93
+\T5/lmr/m/n/13 learning, the method achieves robust and accurate localization across various surface
+ []
+
+
+Overfull \hbox (1.10036pt too wide) in paragraph at lines 12--93
+\T5/lmr/m/n/13 estimation with fewer physical interactions. However, their reliance on prior training
  []
 
 (main.bbl [3]
@@ -1214,11 +1249,16 @@ Underfull \hbox (badness 2088) in paragraph at lines 52--56
 [4
 
 ]
-Underfull \hbox (badness 1466) in paragraph at lines 86--91
+Underfull \hbox (badness 1466) in paragraph at lines 100--105
 \T5/lmr/m/n/13 Science and Engineering (CASE)'', tr. 2555--2561 (IEEE), doi:$10 . 1109 /
  []
 
-[5]) [6] (main.aux (overview/title.aux))
+[5]
+Underfull \hbox (badness 2253) in paragraph at lines 121--126
+[]\T5/lmr/m/n/13 Nikos Mavrakis, Amir M. Ghalamzan E. v  Rustam Stolkin (2020),
+ []
+
+) [6] (main.aux (overview/title.aux))
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
@@ -1227,17 +1267,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: CC88C53C18093677739DC8E2A0D8046D;367.
  ) 
 Here is how much of TeX's memory you used:
- 28705 strings out of 467871
- 525005 string characters out of 5428436
- 988030 words of memory out of 5000000
- 56990 multiletter control sequences out of 15000+600000
+ 28709 strings out of 467871
+ 525095 string characters out of 5428436
+ 988114 words of memory out of 5000000
+ 56992 multiletter control sequences out of 15000+600000
  718051 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 110i,5n,107p,2648b,607s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 110i,5n,107p,2056b,607s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/lm/lmri12.pfb>
-Output written on main.pdf (7 pages, 298767 bytes).
+Output written on main.pdf (7 pages, 300669 bytes).
 PDF statistics:
- 121 PDF objects out of 1000 (max. 8388607)
- 28 named destinations out of 1000 (max. 500000)
+ 125 PDF objects out of 1000 (max. 8388607)
+ 30 named destinations out of 1000 (max. 500000)
  40 words of extra memory for PDF output out of 10000 (max. 10000000)
 
