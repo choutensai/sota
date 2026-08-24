@@ -390,10 +390,11 @@ INPUT .\SOA\SOA_01.tex
 INPUT SOA\SOA_01.tex
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\t5-lmr12.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\t5-lmbx12.tfm
-INPUT .\main.bbl
-INPUT .\main.bbl
-INPUT main.bbl
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\t5-lmri12.tfm
+INPUT .\methodology\Method_1.tex
+INPUT .\methodology\Method_1.tex
+INPUT .\methodology\Method_1.tex
+INPUT .\methodology\Method_1.tex
+INPUT methodology\Method_1.tex
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\rm-lmr12.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\rm-lmr9.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\rm-lmr7.tfm
@@ -434,6 +435,14 @@ INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
+INPUT .\main.bbl
+INPUT .\main.bbl
+INPUT main.bbl
+INPUT C:\Program Files\MiKTeX\fonts\enc\dvips\lm\lm-rm.enc
+INPUT C:\Program Files\MiKTeX\fonts\enc\dvips\lm\lm-mathit.enc
+INPUT C:\Program Files\MiKTeX\fonts\enc\dvips\lm\lm-mathex.enc
+INPUT C:\Program Files\MiKTeX\fonts\enc\dvips\lm\lm-mathsy.enc
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\lm\t5-lmri12.tfm
 INPUT main.aux
 INPUT .\overview\title.aux
 INPUT .\overview\title.aux
@@ -442,11 +451,23 @@ INPUT .\main.out
 INPUT .\main.out
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmbx12.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmbx12.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmex10.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmex10.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmmi12.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmmi12.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmmi7.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmmi7.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmmi9.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmmi9.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmr10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmr10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmr12.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmr12.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmr17.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmr17.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmr9.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmr9.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmri12.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmri12.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmsy10.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\lm\lmsy10.pfb
