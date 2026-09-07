@@ -1,36 +1,77 @@
 \section{Methodology}
 
 \begin{equation}
-\ddot{\mathbf{p}}_C
+M
 =
-\frac{1}{m}
-\left(
-\sum_{i=1}^{n}\mathbf{F}_i+\mathbf{F}_f
-\right)
-\end{equation}
-
-\begin{equation} 
-\ddot{\Theta} 
-= 
-\frac{1}{I}
-\left[
-\sum_{i=1}^{n} 
-\left(\mathbf{p}_{C_i}-\mathbf{p}_{C}\right) 
-\times \mathbf{F}_{i}
+\sum_{i=1}^{n}
+\mathbf{L}_{i} \times \mathbf{F}_{i}
 + M_f
-\right]
 \end{equation}
 
 \begin{equation}
-\ddot{\Theta}
+M
 =
-\frac{1}{I}
-\sum_{i=1}^{N}
-\mathbf{p}_{C_i}\times\mathbf{F}_i
+\sum_{i=1}^{n}
+\mathbf{p}_{i} \times \mathbf{F}_{i}
 -
-\frac{1}{I}
-\mathbf{p}_C\times
-\sum_{i=1}^{N}\mathbf{F}_i
+\mathbf{p}_{C} \times
+\sum_{i=1}^{n}
+\mathbf{F}_{i}
 +
-\frac{1}{I}M_f
+M_f
+\end{equation}
+
+\begin{equation}
+M
+=
+\sum_{i=1}^{n}
+\mathbf{p}_{i} \times \mathbf{F}_{i}
++
+M_f
+\end{equation}
+
+\begin{equation}
+G(u)
+=
+\begin{bmatrix}
+\mathbf{n}(u_1) & \cdots & \mathbf{n}(u_N) \\
+\ell(u_1) & \cdots & \ell(u_N)
+\end{bmatrix}
+\in \mathbb{R}^{3 \times N}
+\end{equation}
+
+\begin{equation}
+\mathbf{w}
+=
+G(\mathbf{u})\mathbf{f}
+=
+\begin{bmatrix}
+\mathbf{n}(u_1) & \cdots & \mathbf{n}(u_N) \\
+\ell(u_1) & \cdots & \ell(u_N)
+\end{bmatrix}
+\begin{bmatrix}
+f_1\\
+\vdots\\
+f_N
+\end{bmatrix}
+=
+\begin{bmatrix}
+F_x\\
+F_y\\
+M
+\end{bmatrix}
+\in \mathbb{R}^{3}.
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+\min_{\mathbf{u} \in \mathbb{R}_{\geq 0}^{N}}
+\quad & J(\mathbf{u}) = -J_r(\mathbf{u}) \\
+\text{s.t.}\quad
+& \exists\,\tilde{\mathbf{f}} \in \mathcal{F}
+\quad \text{s.t.}\quad
+G(\mathbf{u})\tilde{\mathbf{f}} = \mathbf{w}_d, \\
+& \mathrm{frD}(u_i,u_j) \geq d_{\min},
+\qquad \forall i \neq j .
+\end{aligned}
 \end{equation}
