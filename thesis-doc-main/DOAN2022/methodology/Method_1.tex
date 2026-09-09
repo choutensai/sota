@@ -1,80 +1,114 @@
 \section{Methodology}
 \subsection{Formulation}
-The system consists of $N$ robots maninupulating an object with polygonal shape. Each robot can exert a normal force $f_i$ within a limited range : $0 < f_i < f_{max}$ at its contact point $C_i$.The forces all
-robots exert on the object are cast into the vector $f_r= [f_1, \ldots, f_N]$  A formation $p = [p_{C_1}, \ldots, p_{C_N}]$ 
+The system consists of $N$ robots maninupulating an object with polygonal shape. Each robot can exert a normal force $f_i$ within a limited range : $0 < f_i < f_{max}$ at its contact point $C_i$.The net force and torque that all robots exert on the object are descibe as:
 
 \begin{equation}
-M
+F
 =
-\sum_{i=1}^{n}
-\mathbf{L}_{i} \times \mathbf{F}_{i}
-+ M_f
-\end{equation}
-
-\begin{equation}
-M
-=
-\sum_{i=1}^{n}
-\mathbf{p}_{i} \times \mathbf{F}_{i}
--
-\mathbf{p}_{C} \times
-\sum_{i=1}^{n}
+\sum_{i=1}^{N}
 \mathbf{F}_{i}
 +
-M_f
+F_f
+\end{equation}
+
+\begin{equation} 
+\tau 
+= 
+\sum_{i=1}^{N} 
+\left( 
+\mathbf{p}_{i}-\mathbf{p}_{C} 
+\right)^{\perp T} 
+\mathbf{F}_{i} 
++ 
+\tau_f
+\end{equation}
+
+where $(\cdot)^\perp$ denotes the perpendicular operator, defined as
+$\mathbf{v}^\perp = Q\mathbf{v}$, with
+$Q=\begin{bmatrix}0&-1\\1&0\end{bmatrix}$.
+
+\begin{equation} 
+\tau 
+= 
+\sum_{i=1}^{N} 
+\mathbf{p}_{i}^{\perp T}\mathbf{F}_{i} 
+- 
+\mathbf{p}_{C}^{\perp T} 
+\sum_{i=1}^{N}\mathbf{F}_{i} 
++ 
+\tau_f 
+\end{equation} 
+ 
+\begin{equation} 
+\tau 
+= 
+\sum_{i=1}^{N} 
+\mathbf{p}_{i}^{\perp T}\mathbf{F}_{i} 
++ 
+\tau_f 
 \end{equation}
 
 \begin{equation}
-M
+{}^{B}\mathbf{p}_{\mathrm{C}}
 =
-\sum_{i=1}^{n}
-\mathbf{p}_{i} \times \mathbf{F}_{i}
+R^{T}(\theta)
+\left[
+{}^{W}\mathbf{p}_{r}
+-
+{}^{W}\mathbf{p}_{o}
 +
-M_f
+\frac{1}{\omega}
+\left({}^{W}\dot{\mathbf{p}}_{r}\right)^{\perp}
+\right]
+\end{equation}
+
+\subsection{Formation synthesis}
+
+\begin{equation}
+\tau_{\max}
+=
+\max_{0 \leq f \leq f_{\max}}
+\; \sum_{i=1}^{N} \mathbf{p}_{i}^{\perp T}\mathbf{F}_{i}
+\quad
+\mathrm{s.t.}
+\quad
+\sum_{i=1}^{N} \mathbf{F}_i = \mathbf{0}.
 \end{equation}
 
 \begin{equation}
-G(u)
+\tau_{\min}
 =
-\begin{bmatrix}
-\mathbf{n}(u_1) & \cdots & \mathbf{n}(u_N) \\
-\ell(u_1) & \cdots & \ell(u_N)
-\end{bmatrix}
-\in \mathbb{R}^{3 \times N}
+\min_{0 \leq f \leq f_{\max}}
+\; \sum_{i=1}^{N} \mathbf{p}_{i}^{\perp T}\mathbf{F}_{i}
+\quad
+\mathrm{s.t.}
+\quad
+\sum_{i=1}^{N} \mathbf{F}_i = \mathbf{0}.
 \end{equation}
 
 \begin{equation}
-\mathbf{w}
+J_r
 =
-G(\mathbf{u})\mathbf{f}
-=
-\begin{bmatrix}
-\mathbf{n}(u_1) & \cdots & \mathbf{n}(u_N) \\
-\ell(u_1) & \cdots & \ell(u_N)
-\end{bmatrix}
-\begin{bmatrix}
-f_1\\
-\vdots\\
-f_N
-\end{bmatrix}
-=
-\begin{bmatrix}
-F_x\\
-F_y\\
-M
-\end{bmatrix}
-\in \mathbb{R}^{3}.
+\min
+\left(
+\left|\tau_{\max}-\tau_d\right|,
+\left|\tau_{\min}-\tau_d\right|
+\right).
 \end{equation}
 
 \begin{equation}
 \begin{aligned}
-\min_{\mathbf{u} \in \mathbb{R}_{\geq 0}^{N}}
-\quad & J(\mathbf{u}) = -J_r(\mathbf{u}) \\
+\min_{\mathbf{p} \in \mathbb{R}_{\geq 0}^{N}}
+\quad & J(\mathbf{p}) = -J_r(\mathbf{p}) \\
 \text{s.t.}\quad
 & \exists\,\tilde{\mathbf{f}} \in \mathcal{F}
 \quad \text{s.t.}\quad
-G(\mathbf{u})\tilde{\mathbf{f}} = \mathbf{w}_d, \\
-& \mathrm{frD}(u_i,u_j) \geq d_{\min},
+\sum_{i=1}^{N} \mathbf{F}_i = \mathbf{0}, 
+\sum_{i=1}^{N} \mathbf{p}_{i}^{\perp T}\mathbf{F}_{i} = \tau_{d}, \\
+& \mathrm{frD}(p_i,p_j) \geq d_{\min},
 \qquad \forall i \neq j .
 \end{aligned}
 \end{equation}
+
+\subsection{Force-based control}
+
