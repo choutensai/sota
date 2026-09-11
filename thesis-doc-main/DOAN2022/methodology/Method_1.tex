@@ -27,6 +27,8 @@ where $(\cdot)^\perp$ denotes the perpendicular operator, defined as
 $\mathbf{v}^\perp = Q\mathbf{v}$, with
 $Q=\begin{bmatrix}0&-1\\1&0\end{bmatrix}$.
 
+rewriten as :
+
 \begin{equation} 
 \tau 
 = 
@@ -39,6 +41,8 @@ $Q=\begin{bmatrix}0&-1\\1&0\end{bmatrix}$.
 \tau_f 
 \end{equation} 
  
+If $\sum_{i=1}^{N}\mathbf{F}_{i}$ = 0 :
+
 \begin{equation} 
 \tau 
 = 
@@ -47,6 +51,8 @@ $Q=\begin{bmatrix}0&-1\\1&0\end{bmatrix}$.
 + 
 \tau_f 
 \end{equation}
+
+COM position from Robot vel:
 
 \begin{equation}
 {}^{B}\mathbf{p}_{\mathrm{C}}
@@ -63,6 +69,8 @@ R^{T}(\theta)
 \end{equation}
 
 \subsection{Formation synthesis}
+
+Torque space:
 
 \begin{equation}
 \tau_{\max}
@@ -86,6 +94,8 @@ R^{T}(\theta)
 \sum_{i=1}^{N} \mathbf{F}_i = \mathbf{0}.
 \end{equation}
 
+Fitness function:
+
 \begin{equation}
 J_r
 =
@@ -96,12 +106,14 @@ J_r
 \right).
 \end{equation}
 
+The formation synthesis problem is formulated as:
+
 \begin{equation}
 \begin{aligned}
 \min_{\mathbf{p} \in \mathbb{R}_{\geq 0}^{N}}
 \quad & J(\mathbf{p}) = -J_r(\mathbf{p}) \\
 \text{s.t.}\quad
-& \exists\,\tilde{\mathbf{f}} \in \mathcal{F}
+& \exists\,\tilde{\mathbf{F}} \in \mathcal{F}
 \quad \text{s.t.}\quad
 \sum_{i=1}^{N} \mathbf{F}_i = \mathbf{0}, 
 \sum_{i=1}^{N} \mathbf{p}_{i}^{\perp T}\mathbf{F}_{i} = \tau_{d}, \\
@@ -110,5 +122,16 @@ J_r
 \end{aligned}
 \end{equation}
 
-\subsection{Force-based control}
+ALPSO ?
 
+\subsection{Force-based control}
+ \begin{equation}
+\begin{aligned}
+\min_{\mathbf{f}} \quad 
+& \|\mathbf{f}\|_2^2 \\
+\text{s.t.} \quad
+& \sum_{i=1}^{n} \mathbf{F}_i = \mathbf{0}, \\
+& \sum_{i=1}^{n} \mathbf{p}_i^{\perp T}\mathbf{F}_i = \tau_d, \\
+& 0 \leq f_i \leq f_{\max}.
+\end{aligned}
+\end{equation}
