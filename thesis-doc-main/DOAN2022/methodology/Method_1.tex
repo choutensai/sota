@@ -1,14 +1,12 @@
 \section{Methodology}
 \subsection{Formulation}
-The system consists of $N$ omnidirectional mobile robots maninupulating an object with polygonal shape whose motion is constrained to a 2D plane. The primary objective is for the robots to cooperatively perform the estimation task to obtain the Center of Mass (COM) of the object in a distributed manner. It is assumed that neither the object nor the robots are subject to kinematic constraints. Each robot $i$ has a circular footprint with radius $r_R$, can measure and exert a normal force $f_i$ within a limited range : $0 < f_i < f_{max}$ at its contact point $C_i$ on the object's surface. It is also assumed that the robots are able to maintain continuous contact with the object and exert an accurately regulated pushing force at its corresponding contact point throughout the manipulation process. The net force and torque that all robots exert on the object in the world-fix frame $W$ are descibe as:
+The system consists of $N$ omnidirectional mobile robots maninupulating an object with polygonal shape whose motion is constrained to a 2D plane using pushing interaction. The primary objective is for the robots to cooperatively perform the estimation task to obtain the Center of Mass (COM) of the object in a distributed manner. It is assumed that the object's position and 2D geometry is known to all robot and neither the object nor the robots are subject to kinematic constraints. Each robot $i$ has a circular footprint with radius $r_R$, can exert a normal force $f_i$ within a limited range : $0 < f_i < f_{max}$, as well as measure the position $p_i$ and velocity $\dot{p}_i$ at its contact point $C_i$ on the object's surface. It is also assumed that the robots are able to maintain continuous contact with the object and control an accurately regulated pushing force at its corresponding contact point throughout the manipulation process. The net force and torque that all robots exert on the object in the world-fix frame $W$ are descibe as:
 
 \begin{equation}
 F
 =
 \sum_{i=1}^{N}
 \mathbf{F}_{i}
-+
-F_f
 \end{equation}
 
 \begin{equation} 
@@ -19,15 +17,12 @@ F_f
 \mathbf{p}_{i}-\mathbf{p}_{C} 
 \right)^{\perp T} 
 \mathbf{F}_{i} 
-+ 
-\tau_f
+\label{eq:tau}
 \end{equation}
 
 where $(\cdot)^\perp$ denotes the perpendicular operator, defined as
 $\mathbf{v}^\perp = Q\mathbf{v}$, with
-$Q=\begin{bmatrix}0&-1\\1&0\end{bmatrix}$. $F_i = f_i ^{\perp T}n_i$ is the force vector of robot $i$, with $n_i$ being the unit normal vector at the contact point $C_i$. 
-
-rewriten as :
+$Q=\begin{bmatrix}0&-1\\1&0\end{bmatrix}$. $F_i = f_i ^{\perp T}n_i$ is the force vector of robot $i$, with $n_i$ being the unit normal vector at the contact point $C_i$. The friction model is negligible since we do not require a dynamically accurate model. The equation \eqref{eq:tau} can be rewritten as:
 
 \begin{equation} 
 \tau 
@@ -35,38 +30,52 @@ rewriten as :
 \sum_{i=1}^{N} 
 \mathbf{p}_{i}^{\perp T}\mathbf{F}_{i} 
 - 
-\mathbf{p}_{C}^{\perp T} 
-\sum_{i=1}^{N}\mathbf{F}_{i} 
-+ 
-\tau_f 
+\mathbf{p}_{C}^{\perp T} \mathbf{F}
+\label{eq:tau2}
 \end{equation} 
- 
-If $\sum_{i=1}^{N}\mathbf{F}_{i}$ = 0 :
+
+\subsection{Estimation algorithm}
+
+When the object undergoes rotational motion, all contact points rotate instantaneously about the same instantaneous center of rotation (ICR). The velocity of each contact point is tangential to its instantaneous circular trajectory and therefore perpendicular to the line connecting the contact point to the ICR. Consequently, the ICR can be geometrically determined from the velocity measurements at multiple contact points by the equation below:
+\begin{equation}
+\mathbf{p}_{ICR}
+=
+\mathbf{p}_{i}
+-
+\mathbf{p}_{o}
++
+\frac{1}{\omega_o}
+\left(\dot{\mathbf{p}}_{i}\right)^{\perp}
+\end{equation}
+
+where $p_o$ and $\omega_o$ are the position and angular velocity of the object, respectively.
+
+The proposed distributed estimation algorithm idea is to generate a pure rotational motion of the object by controlling formation and the exert force of the robots. When this occurs, the ICR is located exactly at the COM of the object. Note that since the net force $F$ is independent of the object's COM position, when the object undergoes pure rotation, in other words, the net force $F$ on the object is zero, then \eqref{eq:tau2} reduces to:
 
 \begin{equation} 
 \tau 
 = 
 \sum_{i=1}^{N} 
-\mathbf{p}_{i}^{\perp T}\mathbf{F}_{i} 
-+ 
-\tau_f 
+\mathbf{p}_{i}^{\perp T}\mathbf{F}_{i}
 \end{equation}
 
-COM position from Robot vel:
+Therefore, the net torque $\tau$ is only dependent on the contact points position and the exerted forces, regardless of the object's COM position. By controlling the formation of the robots and their exerted forces, we can achieve the desired net torque $\tau_d$ that will induce a pure rotational motion of the object. This torque can be agreed upon by all robots through communication or a consensus algorithm. The COM position can then be estimated by each robot using the following equation:
 
 \begin{equation}
 {}^{B}\mathbf{p}_{\mathrm{C}}
 =
 R^{T}(\theta)
 \left[
-{}^{W}\mathbf{p}_{r}
+{}^{W}\mathbf{p}_{i}
 -
 {}^{W}\mathbf{p}_{o}
 +
 \frac{1}{\omega}
-\left({}^{W}\dot{\mathbf{p}}_{r}\right)^{\perp}
+\left({}^{W}\dot{\mathbf{p}}_{i}\right)^{\perp}
 \right]
 \end{equation}
+
+The estimation problem can now be formulated into 2 sub-problems: formation synthesis and force-based control. The formation synthesis problem's objective is to find a configuration $p$,  which is able to cooperatively exert the desired force and torque on the object. The force control problem determine the forces to be exerted by each robot to achieve the desired net force and torque on the object. 
 
 \subsection{Formation synthesis}
 
