@@ -79,10 +79,10 @@ The estimation problem can now be formulated into 2 sub-problems: formation synt
 
 \subsection{Formation synthesis}
 
-Torque space:
+Since the maximum pushing force $f_{\max}$ is finite due to the physical limitations of the robots, for each configuration of the robots, the corresponding manipulation space is a closed set $W$ consisting of all feasible set of forces and torques, or wrenches that can be exerted by the current formation. The full manipulation space can not be accurately determined or analyzed without prior information about the COM position, which heavily affects the rotational motion of the object. However as established above, when pure rotation occurs, the torque becomes decoupled from the COM position. The maximum and minimum torque can be exerted by a configuration $p$ can be derived by solving the following linear programming problems:
 
 \begin{equation}
-\tau_{\max}
+\tau_{\max}(p)
 =
 \max_{0 \leq f \leq f_{\max}}
 \; \sum_{i=1}^{N} \mathbf{p}_{i}^{\perp T}\mathbf{F}_{i}
@@ -93,7 +93,7 @@ Torque space:
 \end{equation}
 
 \begin{equation}
-\tau_{\min}
+\tau_{\min}(p)
 =
 \min_{0 \leq f \leq f_{\max}}
 \; \sum_{i=1}^{N} \mathbf{p}_{i}^{\perp T}\mathbf{F}_{i}
@@ -103,7 +103,7 @@ Torque space:
 \sum_{i=1}^{N} \mathbf{F}_i = \mathbf{0}.
 \end{equation}
 
-Fitness function:
+These two quantities are, in fact, the intersection of the manipulation space with the torque axis. A formation is considered feasible if the desired torque $\tau_d$ is within the range of $[\tau_{\min}, \tau_{\max}]$. It is also benificial to maximize the minimum distance between the desired torque $\tau_d$ and the boundary of the feasible torque range, which can be formulated as a fitness function $J_r$ for robustness metric:
 
 \begin{equation}
 J_r
