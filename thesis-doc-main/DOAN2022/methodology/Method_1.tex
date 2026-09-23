@@ -7,6 +7,7 @@ F
 =
 \sum_{i=1}^{N}
 \mathbf{F}_{i}
+\label{eq:force}
 \end{equation}
 
 \begin{equation} 
@@ -79,6 +80,8 @@ The estimation problem can now be formulated into 2 sub-problems: formation synt
 
 \subsection{Formation synthesis}
 
+Search space ?
+
 Since the maximum pushing force $f_{\max}$ is finite due to the physical limitations of the robots, for each configuration of the robots, the corresponding manipulation space is a closed set $W$ consisting of all feasible set of forces and torques, or wrenches that can be exerted by the current formation. The full manipulation space can not be accurately determined or analyzed without prior information about the COM position, which heavily affects the rotational motion of the object. However as established above, when pure rotation occurs, the torque becomes decoupled from the COM position. The maximum and minimum torque can be exerted by a configuration $p$ can be derived by solving the following linear programming problems:
 
 \begin{equation}
@@ -117,24 +120,32 @@ J_r
 
 The formation synthesis problem is formulated as:
 
-\begin{equation}
-\begin{aligned}
+\begin{subequations}
+\begin{align}
 \min_{\mathbf{p} \in \mathbb{R}_{\geq 0}^{N}}
-\quad & J(\mathbf{p}) = -J_r(\mathbf{p}) \\
+\quad & J(\mathbf{p}) = -J_r(\mathbf{p})
+\label{eq:objective} \\[2mm]
 \text{s.t.}\quad
-& \exists\,\tilde{\mathbf{F}} \in \mathcal{F}
+& \exists\,\tilde{\mathbf{f}} \in \mathcal{F}
 \quad \text{s.t.}\quad
-\sum_{i=1}^{N} \mathbf{F}_i = \mathbf{0}, 
-\sum_{i=1}^{N} \mathbf{p}_{i}^{\perp T}\mathbf{F}_{i} = \tau_{d}, \\
+F = \mathbf{0},\;
+\sum_{i=1}^{N} \mathbf{p}_{i}^{\perp T}\mathbf{F}_{i}
+= \tau_{d},
+\label{eq:wrench_constraint} \\[2mm]
 & \mathrm{frD}(p_i,p_j) \geq d_{\min},
 \qquad \forall i \neq j .
-\end{aligned}
-\end{equation}
+\label{eq:distance_constraint}
+\end{align}
+\label{eq:formation_synthesis}
+\end{subequations}
 
-ALPSO ?
+where $d_{min} > 2r_r$ is the a minimum Euclidean distance between the robots to avoid collision. It is essential that the constraints \eqref{eq:wrench_constraint} and \eqref{eq:distance_constraint} are satisfied to ensure that the desired wrench can be exerted by the formation without violating physical feasibility, while minimizing the objective function yields a configuration that is optimal with respect to the selected criteria. The objective function \eqref{eq:objective} is a desirable property, which can be modified to include other metrics. In this case, only rotational robustness is consisered. The formation synthesis problem is a non-convex optimization problem, which can be solved using heuristic approaches, for example Particle Swarm Optimization (PSO). To keep the distributed nature of the system, each robot can run the optimization algorithm independently and share their best solution with their neighbors. The best solution is then selected as the final configuration.
 
-\subsection{Force-based control}
- \begin{equation}
+\subsection{Force control}
+
+The next problem to be solved is to determine the forces to be exerted by each robot to achieve the desired net force and torque on the object. While one naive approach would be to just solve \eqref{eq:force} and \eqref{eq:tau2} using least-square approaches, this would fail to account for the physical limitations of the forces exerted by the robots, resulting in a solution that is not physically feasible. Therefore, the force control problem is formulated as a convex optimization problem:
+
+\begin{equation}
 \begin{aligned}
 \min_{\mathbf{f}} \quad 
 & \|\mathbf{f}\|_2^2 \\
