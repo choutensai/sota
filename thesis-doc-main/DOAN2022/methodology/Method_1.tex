@@ -1,6 +1,14 @@
 \section{Methodology}
 \subsection{Formulation}
-The system consists of $N$ omnidirectional mobile robots maninupulating an object with polygonal shape whose motion is constrained to a 2D plane using pushing interaction. The primary objective is for the robots to cooperatively perform the estimation task to obtain the Center of Mass (COM) of the object in a distributed manner. It is assumed that the object's position and 2D geometry is known to all robot and neither the object nor the robots are subject to kinematic constraints. Each robot $i$ has a circular footprint with radius $r_R$, can exert a normal force $f_i$ within a limited range : $0 < f_i < f_{max}$, as well as measure the position $p_i$ and velocity $\dot{p}_i$ at its contact point $C_i$ on the object's surface. It is also assumed that the robots are able to maintain continuous contact with the object and control an accurately regulated pushing force at its corresponding contact point throughout the manipulation process. The net force and torque that all robots exert on the object in the world-fix frame $W$ are descibe as:
+The system consists of $N$ omnidirectional mobile robots maninupulating an object with polygonal shape whose motion is constrained to a 2D plane using pushing interaction. The primary objective is for the robots to cooperatively perform the estimation task to obtain the Center of Mass (COM) of the object in a distributed manner. It is assumed that the object's position and 2D geometry is known to all robot and neither the object nor the robots are subject to kinematic constraints. Each robot $i$ has a circular footprint with radius $r_R$, can exert a normal force $f_i$ within a limited range : $0 < f_i < f_{max}$, as well as measure the position $p_i$ and velocity $\dot{p}_i$ at its contact point $C_i$ on the object's surface. The forces applied to the object by the robots are represented by the vector: $\mathbf{f}=[f_1,\ldots,f_N]^T \in
+\mathcal{F}
+:=
+\left\{
+\mathbf{f}\in\mathbb{R}^N
+\mid
+0\leq f_i\leq f_{\max},
+\; i=1,\ldots,N
+\right\}$. It is also assumed that the robots are able to maintain continuous contact with the object and control an accurately regulated pushing force at its corresponding contact point throughout the manipulation process. The net force and torque that all robots exert on the object in the world-fix frame $W$ are descibe as:
 
 \begin{equation}
 F
@@ -80,30 +88,30 @@ The estimation problem can now be formulated into 2 sub-problems: formation synt
 
 \subsection{Formation synthesis}
 
-Search space ?
+To efficiently search for the optimal robot configuration, the search space is defined directly along the object boundary. Since each robot is constrained to establish contact with the object's surface, the position of robot i can be parameterized by a scalar variable $s_i$ representing the arc length along the polygonal boundary of the object. Accordingly, the search space for (N) robots is expressed as $\mathbf{s}=[s_1,\ldots,s_N]^T$, where $s_i\in[0,L)$ and (L) denotes the total perimeter of the object. To improve contact stability, a small margin $d_s$ around each polygon vertex is omitted from the search space, the resulting feasible search space is illustrated in.
 
 Since the maximum pushing force $f_{\max}$ is finite due to the physical limitations of the robots, for each configuration of the robots, the corresponding manipulation space is a closed set $W$ consisting of all feasible set of forces and torques, or wrenches that can be exerted by the current formation. The full manipulation space can not be accurately determined or analyzed without prior information about the COM position, which heavily affects the rotational motion of the object. However as established above, when pure rotation occurs, the torque becomes decoupled from the COM position. The maximum and minimum torque can be exerted by a configuration $p$ can be derived by solving the following linear programming problems:
 
 \begin{equation}
-\tau_{\max}(p)
-=
-\max_{0 \leq f \leq f_{\max}}
-\; \sum_{i=1}^{N} \mathbf{p}_{i}^{\perp T}\mathbf{F}_{i}
+\begin{aligned}
+\tau_{\max}(\mathbf{p})
+&=
+\max_{\mathbf{f}\in\mathcal{F}}
+\sum_{i=1}^{N}
+\mathbf{p}_i^{\perp T}\mathbf{F}_i
 \quad
-\mathrm{s.t.}
+\text{s.t.}\quad
+\sum_{i=1}^{N}\mathbf{F}_i=\mathbf{0},
+\\
+\tau_{\min}(\mathbf{p})
+&=
+\min_{\mathbf{f}\in\mathcal{F}}
+\sum_{i=1}^{N}
+\mathbf{p}_i^{\perp T}\mathbf{F}_i
 \quad
-\sum_{i=1}^{N} \mathbf{F}_i = \mathbf{0}.
-\end{equation}
-
-\begin{equation}
-\tau_{\min}(p)
-=
-\min_{0 \leq f \leq f_{\max}}
-\; \sum_{i=1}^{N} \mathbf{p}_{i}^{\perp T}\mathbf{F}_{i}
-\quad
-\mathrm{s.t.}
-\quad
-\sum_{i=1}^{N} \mathbf{F}_i = \mathbf{0}.
+\text{s.t.}\quad
+\sum_{i=1}^{N}\mathbf{F}_i=\mathbf{0}.
+\end{aligned}
 \end{equation}
 
 These two quantities are, in fact, the intersection of the manipulation space with the torque axis. A formation is considered feasible if the desired torque $\tau_d$ is within the range of $[\tau_{\min}, \tau_{\max}]$. It is also benificial to maximize the minimum distance between the desired torque $\tau_d$ and the boundary of the feasible torque range, which can be formulated as a fitness function $J_r$ for robustness metric:
@@ -139,11 +147,11 @@ F = \mathbf{0},\;
 \label{eq:formation_synthesis}
 \end{subequations}
 
-where $d_{min} > 2r_r$ is the a minimum Euclidean distance between the robots to avoid collision. It is essential that the constraints \eqref{eq:wrench_constraint} and \eqref{eq:distance_constraint} are satisfied to ensure that the desired wrench can be exerted by the formation without violating physical feasibility, while minimizing the objective function yields a configuration that is optimal with respect to the selected criteria. The objective function \eqref{eq:objective} is a desirable property, which can be modified to include other metrics. In this case, only rotational robustness is consisered. The formation synthesis problem is a non-convex optimization problem, which can be solved using heuristic approaches, for example Particle Swarm Optimization (PSO). To keep the distributed nature of the system, each robot can run the optimization algorithm independently and share their best solution with their neighbors. The best solution is then selected as the final configuration.
+where $d_{min} > 2r_r$ is the a minimum Euclidean distance between the robots to avoid collision. It is essential that the constraints \eqref{eq:wrench_constraint} and \eqref{eq:distance_constraint} are satisfied to ensure that the desired wrench can be exerted by the formation without violating physical feasibility, while minimizing the objective function yields a configuration that is optimal with respect to the selected criteria. The objective function \eqref{eq:objective} is a desirable property, which can be modified to include other metrics. In this case, only rotational robustness is consisered. The formation synthesis problem is a non-convex optimization problem, which can be solved using heuristic approaches, for example Particle Swarm Optimization (PSO). To keep the distributed nature of the system, each robot can run the optimization algorithm independently and share their best particle with their neighbors. The best solution is then selected as the final configuration.
 
 \subsection{Force control}
 
-The next problem to be solved is to determine the forces to be exerted by each robot to achieve the desired net force and torque on the object. While one naive approach would be to just solve \eqref{eq:force} and \eqref{eq:tau2} using least-square approaches, this would fail to account for the physical limitations of the forces exerted by the robots, resulting in a solution that is not physically feasible. Therefore, the force control problem is formulated as a convex optimization problem:
+The next problem to be solved is to determine the forces to be exerted by each robot to achieve the desired net force and torque on the object. While one naive approach would be to just solve \eqref{eq:force} and \eqref{eq:tau2} using least-square approaches, this would fail to account for the physical limitations of the forces exerted by the robots, resulting in a solution that is not physically feasible. To tackle this issue, the force control problem is formulated as a convex optimization problem:
 
 \begin{equation}
 \begin{aligned}
@@ -155,3 +163,5 @@ The next problem to be solved is to determine the forces to be exerted by each r
 & 0 \leq f_i \leq f_{\max}.
 \end{aligned}
 \end{equation}
+
+where  
