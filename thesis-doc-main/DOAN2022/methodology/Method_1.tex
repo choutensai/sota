@@ -151,17 +151,22 @@ where $d_{min} > 2r_r$ is the a minimum Euclidean distance between the robots to
 
 \subsection{Force control}
 
-The next problem to be solved is to determine the forces to be exerted by each robot to achieve the desired net force and torque on the object. While one naive approach would be to just solve \eqref{eq:force} and \eqref{eq:tau2} using least-square approaches, this would fail to account for the physical limitations of the forces exerted by the robots, resulting in a solution that is not physically feasible. To tackle this issue, the force control problem is formulated as a convex optimization problem:
+The next problem to be solved is to determine the forces to be exerted by each robot to achieve the desired net force and torque on the object. While one naive approach would be to just solve \eqref{eq:force} and \eqref{eq:tau2} using least-square approaches, this would fail to account for the physical limitations of the forces exerted by the robots, resulting in a solution that is not physically feasible. To tackle this issue, the force control problem is formulated as an optimization problem:
 
-\begin{equation}
-\begin{aligned}
-\min_{\mathbf{f}} \quad 
-& \|\mathbf{f}\|_2^2 \\
-\text{s.t.} \quad
-& \sum_{i=1}^{n} \mathbf{F}_i = \mathbf{0}, \\
-& \sum_{i=1}^{n} \mathbf{p}_i^{\perp T}\mathbf{F}_i = \tau_d, \\
-& 0 \leq f_i \leq f_{\max}.
-\end{aligned}
-\end{equation}
+\begin{align}
+\min_{\mathbf{f}} \quad
+& \left(
+\sum_{i=1}^{n}
+\mathbf{p}_{i}^{\perp T}\mathbf{F}_{i}
+-\tau_d
+\right)^2
+\label{eq:objective}\\
+\text{s.t.}\quad
+& \mathbf{F}=\mathbf{0},
+\label{eq:force_balance}\\
+& 0 \leq f_i\leq f_{\max},
+\qquad i=1,\ldots,n.
+\label{eq:force_bound}
+\end{align}
 
-where  
+Satisfying constraints \eqref{eq:force_balance} and \eqref{eq:force_bound} is the primary requirement of the optimization problem, since they ensure the physical feasibility and enable the desired pure rotational motion. It is desirable that the net torque is as close as possible to the desired torque $\tau_d$, howerver it is not required to exactly match $\tau_d$, provided that its magnitude is sufficient to overcome the resisting static friction torque.

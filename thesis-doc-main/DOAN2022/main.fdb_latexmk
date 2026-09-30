@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1790587014.21904 "main.aux" "main.bbl" "main" 1790587463.0381 0
+["bibtex main"] 1790761129.73416 "main.aux" "main.bbl" "main" 1790764939.73141 0
   "./reference.bib" 1787021672 7524 dfc397473e7d8f3ea82ef8e11882e35c ""
   "./vietnumeric.bst" 1785833949 27741 78a4462118e6117289e7846c163a2183 ""
-  "main.aux" 1790587461 3517 0d417af9033dbf15632afbdf14255ec5 "pdflatex"
-  "overview/title.aux" 1790587461 1362 6fd2fda37e0ddcdf499c49bc2aeb7f31 "pdflatex"
+  "main.aux" 1790764938 3724 f304079155d7f8a261768d8338cc3f0a "pdflatex"
+  "overview/title.aux" 1790764938 1362 6fd2fda37e0ddcdf499c49bc2aeb7f31 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1790587459.23358 "c:/Users/HP Omen/Desktop/SOTA/sota/thesis-doc-main/DOAN2022/main.tex" "main.pdf" "main" 1790587463.04249 0
+["pdflatex"] 1790764936.85812 "c:/Users/HP Omen/Desktop/SOTA/sota/thesis-doc-main/DOAN2022/main.tex" "main.pdf" "main" 1790764939.73226 0
   "C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc" 1256929440 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc" 1256929440 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "C:/Program Files/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc" 1256929440 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -242,13 +242,13 @@
   "C:/Users/HP Omen/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1785834816 13323427 fff3e7c555a882e07ef631cedeca4381 ""
   "SOA/SOA_01.tex" 1787293667 7346 5b39c49ddad1a8cfd3546ba6a322a699 ""
   "c:/Users/HP Omen/Desktop/SOTA/sota/thesis-doc-main/DOAN2022/main.tex" 1787296855 2534 892b8a310661b2f04856a78c2681b97c ""
-  "main-frn.tex" 1790587461 450 968cc1df2af3d8a37a4f11a0fed4da16 "pdflatex"
-  "main.aux" 1790587461 3517 0d417af9033dbf15632afbdf14255ec5 "pdflatex"
-  "main.bbl" 1790587014 6230 a2a52b17dda3126bd87f976b39cc926e "bibtex main"
-  "main.out" 1790587461 1142 1f0bb47336f25987f480f3609f4b4db9 "pdflatex"
+  "main-frn.tex" 1790764938 450 968cc1df2af3d8a37a4f11a0fed4da16 "pdflatex"
+  "main.aux" 1790764938 3724 f304079155d7f8a261768d8338cc3f0a "pdflatex"
+  "main.bbl" 1790761130 6230 a2a52b17dda3126bd87f976b39cc926e "bibtex main"
+  "main.out" 1790764938 1142 1f0bb47336f25987f480f3609f4b4db9 "pdflatex"
   "main.tex" 1787296855 2534 892b8a310661b2f04856a78c2681b97c ""
-  "methodology/Method_1.tex" 1790587458 9460 968a19f3fadb396d2e9f000811aac32c ""
-  "overview/title.aux" 1790587461 1362 6fd2fda37e0ddcdf499c49bc2aeb7f31 "pdflatex"
+  "methodology/Method_1.tex" 1790764936 9936 996067efabf1f4e75925d33fb1dcc450 ""
+  "overview/title.aux" 1790764938 1362 6fd2fda37e0ddcdf499c49bc2aeb7f31 "pdflatex"
   "overview/title.tex" 1785833950 1441 c1df2e8fe070ade451ff6029333fbe65 ""
   "overview/uet.png" 1785833950 189995 2e817cad2bf80a98dfaa1b774217c6b7 ""
   (generated)
