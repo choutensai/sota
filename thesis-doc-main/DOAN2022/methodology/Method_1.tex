@@ -160,6 +160,8 @@ The next problem to be solved is to determine the forces to be exerted by each r
 \mathbf{p}_{i}^{\perp T}\mathbf{F}_{i}
 -\tau_d
 \right)^2
++\lambda \|\mathbf{f}\|_2^2,
+\qquad \lambda>0
 \label{eq:objective}\\
 \text{s.t.}\quad
 & \mathbf{F}=\mathbf{0},
@@ -169,4 +171,4 @@ The next problem to be solved is to determine the forces to be exerted by each r
 \label{eq:force_bound}
 \end{align}
 
-Satisfying constraints \eqref{eq:force_balance} and \eqref{eq:force_bound} is the primary requirement of the optimization problem, since they ensure the physical feasibility and enable the desired pure rotational motion. It is desirable that the net torque is as close as possible to the desired torque $\tau_d$, howerver it is not required to exactly match $\tau_d$, provided that its magnitude is sufficient to overcome the resisting static friction torque.
+Satisfying constraints \eqref{eq:force_balance} and \eqref{eq:force_bound} is the primary requirement of the optimization problem, since they ensure the physical feasibility and enable the desired pure rotational motion. It is desirable that the net torque is as close as possible to the desired torque $\tau_d$, howerver it is not required to exactly match $\tau_d$, provided that its magnitude is sufficient to overcome the resisting static friction torque. The second term in the objective function \eqref{eq:objective} is a regularization term that minimizes the total exerted force, which is beneficial for energy efficiency and to avoid saturation of the actuators. The optimization problem can be solved using standard convex optimization techniques, such as quadratic programming. Each robot can independently solve this optimization problem using its local measurements and shared information from its neighbors, ensuring a distributed implementation of the force control strategy.
