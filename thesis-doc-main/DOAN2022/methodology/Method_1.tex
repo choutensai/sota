@@ -14,7 +14,7 @@ The system consists of $N$ omnidirectional mobile robots manipulating an object 
 \; i=1,\ldots,N
 \right\}.
 \)
-It is also assumed that the robots are able to maintain continuous contact with the object and control an accurately regulated pushing force at their corresponding contact points throughout the manipulation process. The net force and torque that all robots exert on the object in the world-fixed frame $W$ are described as:
+It is also assumed that the robots are able to maintain continuous contact with the object and control an accurately regulated pushing force at their corresponding contact points throughout the manipulation process. The net pushing force and torque that all robots exert on the object in the world-fixed frame $W$ are described as:
 
 \begin{equation}
 \mathbf{F}
@@ -37,7 +37,7 @@ It is also assumed that the robots are able to maintain continuous contact with 
 
 where $(\cdot)^\perp$ denotes the perpendicular operator, defined as
 $\mathbf{v}^\perp = \mathbf{Q}\mathbf{v}$, with
-$\mathbf{Q}=\begin{bmatrix}0&-1\\1&0\end{bmatrix}$. $\mathbf{F}_i=f_i\mathbf{n}_i$ is the force vector of robot $i$, with $\mathbf{n}_i$ being the unit normal vector at the contact point $C_i$. Friction is not explicitly modeled, since an accurate dynamic prediction of the object's motion is not required. Equation \eqref{eq:tau} can be rewritten as:
+$\mathbf{Q}=\begin{bmatrix}0&-1\\1&0\end{bmatrix}$. $\mathbf{F}_i=f_i\mathbf{n}_i$ is the force vector of robot $i$, with $\mathbf{n}_i$ being the unit normal vector at the contact point $C_i$. Friction between the object and the ground is not explicitly modeled, since an accurate dynamic prediction of the object's motion is not required. Equation \eqref{eq:tau} can be rewritten as:
 
 \begin{equation}
 \tau
@@ -66,7 +66,7 @@ When the object undergoes rotational motion, all contact points rotate instantan
 
 where $\mathbf{p}_o$ and $\omega_o$ are the position and angular velocity of the object, respectively.
 
-The proposed distributed estimation strategy aims to generate a pure rotational motion of the object by coordinating the robot formation and the forces exerted by the robots. To achieve this, the robots coordinate their exerted forces such that the resultant force on the object vanishes, i.e., $\mathbf{F}=\mathbf{0}$, while generating a nonzero nominal desired torque $\tau_d$. Assuming negligible translational disturbances and that the object is stationary prior to each trial, these conditions enable the object to undergo pure rotational motion, for which the ICR coincides with its COM. The desired torque can be agreed upon by all robots through communication or a consensus algorithm. Furthermore, since the net force $\mathbf{F}$ is independent of the object's COM position, imposing $\mathbf{F}=\mathbf{0}$ reduces \eqref{eq:tau2} to:
+The proposed distributed estimation strategy aims to generate a pure rotational motion of the object by coordinating the robot formation and the forces exerted by the robots. To achieve this, the robots coordinate their exerted forces such that the resultant force on the object vanishes, i.e., $\mathbf{F}=\mathbf{0}$, while generating a nonzero nominal desired torque $\tau_d$. Assuming negligible translational disturbances and that the object is stationary prior to each trial, these conditions enable the object to undergo approximately pure rotational motion, for which the ICR coincides with its COM. The desired torque can be agreed upon by all robots through communication or a consensus algorithm. Furthermore, since the net pushing force $\mathbf{F}$ is independent of the object's COM position, imposing $\mathbf{F}=\mathbf{0}$ reduces \eqref{eq:tau2} to:
 \begin{equation}
 \tau
 =
@@ -74,7 +74,7 @@ The proposed distributed estimation strategy aims to generate a pure rotational 
 \mathbf{p}_{i}^{\perp T}\mathbf{F}_{i}
 \end{equation}
 
-Therefore, the net torque $\tau$ is independent of the unknown COM position and is determined solely by the contact locations and the applied forces. By appropriately coordinating the formation of the robots and their exerted forces, we can achieve the desired net torque $\tau_d$, whose magnitude should be sufficient to overcome the resisting static friction. Since the required torque is not known a priori, the trial can be repeated with a progressively increased $\tau_d$, within the feasible torque range of the formation, until rotational motion is observed. The COM position can then be estimated by each robot using the following equation:
+Therefore, the net pushing torque $\tau$ is independent of the unknown COM position and is determined solely by the contact locations and the applied forces. By appropriately coordinating the formation of the robots and their exerted forces, we can achieve the desired net pushing torque $\tau_d$, whose magnitude should be sufficient to initiate rotational motion. Since the required torque is not known a priori, the trial can be repeated with a progressively increased $\tau_d$, within the feasible torque range of the formation, until rotational motion is observed. The COM position can then be estimated by each robot using the following equation:
 
 \begin{equation}
 {}^{B}\mathbf{p}_{C}
@@ -90,7 +90,7 @@ Therefore, the net torque $\tau$ is independent of the unknown COM position and 
 \right]
 \end{equation}
 
-The estimation problem can now be formulated into two sub-problems: formation synthesis and force-based control. The objective of the formation synthesis problem is to find a configuration $\mathbf{p}=[\mathbf{p}_1^T,\ldots,\mathbf{p}_N^T]^T\in\mathbb{R}^{2N}$ that is able to cooperatively exert the desired force and torque on the object. The force control problem determines the forces to be exerted by each robot to achieve the desired net force and torque on the object.
+The estimation problem can now be formulated into two sub-problems: formation synthesis and force-based control. The objective of the formation synthesis problem is to find a configuration $\mathbf{p}=[\mathbf{p}_1^T,\ldots,\mathbf{p}_N^T]^T\in\mathbb{R}^{2N}$ that is able to cooperatively exert the desired force and torque on the object. The force control problem determines the forces to be exerted by each robot to achieve the desired net pushing force and torque on the object.
 
 \subsection{Formation synthesis}
 
@@ -157,7 +157,7 @@ The formation synthesis problem is formulated as:
 
 where $d_{\min} > 2r_R$ is the minimum Euclidean distance between the robots to avoid collision. It is essential that the constraints \eqref{eq:wrench_constraint} and \eqref{eq:distance_constraint} are satisfied to ensure that the desired wrench can be exerted by the formation without violating physical feasibility, while minimizing the objective function yields a configuration that is optimal with respect to the selected criteria. The objective function \eqref{eq:objective1} is a desirable property, which can be modified to include other metrics. In this case, only rotational robustness is considered. The formation synthesis problem is a non-convex optimization problem, which can be solved using heuristic approaches, for example, Particle Swarm Optimization (PSO). To maintain the distributed nature of the system, each robot can run the optimization algorithm independently and share its best particle with its neighbors. Once the optimal contact configuration has been determined, the robots autonomously negotiate which contact position each robot should occupy. Based on the resulting assignment, each robot then navigates toward its designated contact point on the object boundary, thereby allowing the team to establish the desired manipulation configuration in a distributed manner.
 
-The next problem to be solved is to determine the forces to be exerted by each robot to achieve the desired net force and torque on the object. While one naive approach would be to simply solve \eqref{eq:force} and \eqref{eq:tau2} using least-squares approaches, this would fail to account for the physical limitations of the forces exerted by the robots, resulting in a solution that is not physically feasible. To tackle this issue, the force control problem is formulated as an optimization problem:
+The next problem to be solved is to determine the forces to be exerted by each robot to achieve the desired net pushing force and torque on the object. While one naive approach would be to simply solve \eqref{eq:force} and \eqref{eq:tau2} using least-squares approaches, this would fail to account for the physical limitations of the forces exerted by the robots, resulting in a solution that is not physically feasible. To tackle this issue, the force control problem is formulated as an optimization problem:
 
 \begin{align}
 \min_{\mathbf{f}} \quad
@@ -177,4 +177,4 @@ The next problem to be solved is to determine the forces to be exerted by each r
 \label{eq:force_bound}
 \end{align}
 
-Satisfying constraints \eqref{eq:force_balance} and \eqref{eq:force_bound} is the primary requirement of the optimization problem, since they ensure physical feasibility and enable the desired pure rotational motion. It is desirable that the net torque be as close as possible to the desired torque $\tau_d$, however it is not required to exactly match $\tau_d$ since only sufficient torque to induce the required rotational motion is necessary for the estimation task. The second term in the objective function \eqref{eq:objective2} is a regularization term that minimizes the total exerted force, which is beneficial for energy efficiency and avoiding actuator saturation. The optimization problem can be solved using standard convex optimization techniques, such as quadratic programming. Each robot can independently solve this optimization problem using its local measurements and shared information from its neighbors, ensuring a distributed implementation of the force control strategy.
+Satisfying constraints \eqref{eq:force_balance} and \eqref{eq:force_bound} is the primary requirement of the optimization problem, since they ensure physical feasibility and enable the desired pure rotational motion. It is desirable that the net pushing torque be as close as possible to the desired torque $\tau_d$, however it is not required to exactly match $\tau_d$ since only sufficient torque to induce the required rotational motion is necessary for the estimation task. The second term in the objective function \eqref{eq:objective2} is a regularization term that minimizes the total exerted force, which is beneficial for energy efficiency and avoiding actuator saturation. The optimization problem can be solved using standard convex optimization techniques, such as quadratic programming. Each robot can independently solve this optimization problem using its local measurements and shared information from its neighbors, ensuring a distributed implementation of the force control strategy.
