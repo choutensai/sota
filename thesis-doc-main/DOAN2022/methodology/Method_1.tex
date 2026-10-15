@@ -63,7 +63,7 @@ When the object undergoes planar rotational motion, all contact points rotate in
 \label{eq:icr}
 \end{equation}
 
-where $\omega_o$ is the angular velocity of the object.
+where $\omega_o\neq0$ is the angular velocity of the object.
 
 The proposed distributed estimation strategy aims to generate approximately pure rotational motion of the object by coordinating the robot formation and the forces exerted by the robots. To achieve this, the robots coordinate their exerted forces such that the resultant force on the object vanishes, i.e., $\mathbf{F}=\mathbf{0}$, while generating a nonzero nominal desired torque $\tau_d$. According to Newton's second law, this condition would eliminate the translational acceleration caused by the robots. Assuming that the object is initially at rest and that the resultant translational friction force and external disturbances are negligible, the object's COM remains approximately stationary while the object undergoes rotational motion. Consequently, the ICR is expected to lie close to the COM, allowing its position to be estimated from the measured contact-point velocities. The desired torque can be agreed upon by all robots through communication or a consensus algorithm. Furthermore, since the net pushing force $\mathbf{F}$ is independent of the object's COM position, imposing $\mathbf{F}=\mathbf{0}$ reduces \eqref{eq:tau2} to:
 \begin{equation}
