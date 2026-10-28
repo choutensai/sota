@@ -1,20 +1,20 @@
 \section{Results}
-In this simulation experiment, we consider a team of $N = 6$ robots with radius $r_R = 0.15$m and pushing force bounds $f_{\min} = 1$N and $f_{\max} = 10$N, which cooperatively perform an estimation task to obtain the CoM of a U-shaped object. The object has a mass of $m = 3$kg and a moment of inertia $I = 0.1$kg$\cdot$m$^2$. First, the formation synthesis problem is addressed using ALPSO to determine the optimal robot configuration. The obtained formation is illustrated in Fig.~\ref{fig:formation} and achieves a robustness of $J_r = 5.66$\,N$\cdot$m.
+In this simulation experiment, we consider a team of $N = 6$ robots with radius $r_R = 0.15$\,m and pushing force bounds $f_{\min} = 1$\,N and $f_{\max} = 10$\,N, which cooperatively perform an estimation task to obtain the CoM of a U-shaped object. The object has a mass of $m = 3$\,kg and a moment of inertia $I = 0.1$\,kg$\cdot$m$^2$. First, the formation synthesis problem is addressed using ALPSO to determine the optimal robot configuration. The obtained formation is illustrated in Fig.~\ref{fig:formation} and achieves a robustness of $J_r = 5.66$\,N$\cdot$m.
 After the robots move to their designated positions, each robot independently solves the quadratic programming problem to determine its pushing force while maintaining zero resultant force and generating a torque close to the desired value $\tau_d$. The resulting pushing forces are also annotated in Fig.~\ref{fig:formation}. The pushing forces of robots R1 to R6 are $1.0$, $4.0$, $4.0$, $1.0$, $3.2$, and $3.2$\,N, respectively, yielding zero net force and a torque of $2.93$\,N$\cdot$m.
 
-\begin{figure}[htbp]
+\begin{figure}[!t]
 \centering
-\includegraphics[width=0.6\linewidth]{Result/figures/formation.png}
+\includegraphics[width=0.85\linewidth]{Result/figures/formation.png}
 \caption{Optimal formation of $N=6$ robots around the U-shaped object obtained by ALPSO, with the pushing force of each robot computed by the force control problem. The arrows indicate the force directions, and the cross marks the true CoM.}
 \label{fig:formation}
 \end{figure}
 
-During the rotational motion, each robot independently estimates the object's CoM using Recursive Least Squares (RLS), based on successive measurements of its contact point position and velocity and the object's angular velocity. Note that, since the contact point is assumed to be fixed relative to the robot, its position and velocity can be derived from the robot's pose, linear velocity, and angular velocity.
+During the rotational motion, each robot independently estimates the object's CoM using RLS, based on successive measurements of its contact point position and velocity and the object's angular velocity. Note that, since the contact point is assumed to be fixed relative to the robot, its position and velocity can be derived from the robot's pose, linear velocity, and angular velocity.
 To account for sensing imperfections, the contact point position and velocity and the object's angular velocity measured by each robot are corrupted by independent zero-mean Gaussian white noise with standard deviations $\sigma_p = 2$\,mm, $\sigma_v = 0.01$\,m/s and $\sigma_\omega = 0.02$\,rad/s, respectively.
 
-\begin{figure}[H]
+\begin{figure}[!t]
 \centering
-\includegraphics[width=0.75\linewidth]{Result/figures/estimation_error.png}
+\includegraphics[width=\linewidth]{Result/figures/estimation_error.png}
 \caption{CoM estimation error of each robot over time. The dashed line indicates an error of $1$\,cm.}
 \label{fig:estimation_error}
 \end{figure}
