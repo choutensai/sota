@@ -1,6 +1,6 @@
-PWD C:\Users\HP Omen\Desktop\SOTA\sota\thesis-doc-main\DOAN2022
+PWD c:\Users\HP Omen\Desktop\SOTA\sota\thesis-doc-main\DOAN2022
 INPUT C:\Users\HP Omen\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT main.tex
+INPUT c:\Users\HP Omen\Desktop\SOTA\sota\thesis-doc-main\DOAN2022\main.tex
 OUTPUT main.log
 INPUT C:\Program Files\MiKTeX\tex\latex\ieeetran\IEEEtran.cls
 INPUT C:\Program Files\MiKTeX\tex\latex\ieeetran\IEEEtran.cls
@@ -151,12 +151,17 @@ INPUT .\overview\abstract_en.tex
 INPUT .\overview\abstract_en.tex
 INPUT .\overview\abstract_en.tex
 INPUT overview\abstract_en.tex
+INPUT .\introduction\introduction.tex
+INPUT .\introduction\introduction.tex
+INPUT .\introduction\introduction.tex
+INPUT .\introduction\introduction.tex
+INPUT introduction\introduction.tex
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmrc8t.tfm
 INPUT .\SOA\SOA_01.tex
 INPUT .\SOA\SOA_01.tex
 INPUT .\SOA\SOA_01.tex
 INPUT .\SOA\SOA_01.tex
 INPUT SOA\SOA_01.tex
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmrc8t.tfm
 OUTPUT main.pdf
 INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmr8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
@@ -234,15 +239,15 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
+INPUT .\Result\figures\estimation_error.png
+INPUT .\Result\figures\estimation_error.png
+INPUT .\Result\figures\estimation_error.png
+INPUT .\Result\figures\estimation_error.png
+INPUT .\Result\figures\estimation_error.png
+INPUT .\Result\figures\estimation_error.png
+INPUT .\Result\figures\estimation_error.png
 INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\courier\pcrr8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\courier\pcrr8r.tfm
-INPUT .\Result\figures\estimation_error.png
-INPUT .\Result\figures\estimation_error.png
-INPUT .\Result\figures\estimation_error.png
-INPUT .\Result\figures\estimation_error.png
-INPUT .\Result\figures\estimation_error.png
-INPUT .\Result\figures\estimation_error.png
-INPUT .\Result\figures\estimation_error.png
 INPUT .\main.bbl
 INPUT .\main.bbl
 INPUT main.bbl
