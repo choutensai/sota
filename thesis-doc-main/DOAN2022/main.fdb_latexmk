@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1793267980.30662 "main.aux" "main.bbl" "main" 1793268003.62391 0
-  "./reference.bib" 1787021672 7524 dfc397473e7d8f3ea82ef8e11882e35c ""
+["bibtex main"] 1793362710.98462 "main.aux" "main.bbl" "main" 1793362730.13127 0
+  "./reference.bib" 1793360305 12236 a76d6d549fd21367cade71fb64c8fe0c ""
   "C:/Program Files/MiKTeX/bibtex/bst/ieeetran/IEEEtran.bst" 1440622569 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "main.aux" 1793268002 3717 0843f1bde489f64ff3ffc4440779119b "pdflatex"
+  "main.aux" 1793362729 4471 d526859ee61e4952852aa648a05113b1 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1793268002.26081 "c:/Users/HP Omen/Desktop/SOTA/sota/thesis-doc-main/DOAN2022/main.tex" "main.pdf" "main" 1793268003.62444 0
+["pdflatex"] 1793362728.78279 "c:/Users/HP Omen/Desktop/SOTA/sota/thesis-doc-main/DOAN2022/main.tex" "main.pdf" "main" 1793362730.13182 0
   "C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
   "C:/Program Files/MiKTeX/fonts/tfm/adobe/courier/pcrr8r.tfm" 1136765053 1292 bd42be2f344128bff6d35d98474adfe3 ""
   "C:/Program Files/MiKTeX/fonts/tfm/adobe/courier/pcrr8t.tfm" 1136765053 1384 4632f5e54900a7dadbb83f555bc61e56 ""
@@ -110,13 +110,13 @@
   "Result/figures/formation.png" 1792393153 41518 5539213aa415ffbcb4c733b573827ede ""
   "Result/result.tex" 1793180451 3224 839fe184d29729a82fe6ab7800d95888 ""
   "SOA/SOA_01.tex" 1793180451 7305 a5298f2c577e040b7e5dee22c2f933e7 ""
-  "c:/Users/HP Omen/Desktop/SOTA/sota/thesis-doc-main/DOAN2022/main.tex" 1793268001 687 1dda77cdc61e6e172c634a69912c0cd7 ""
-  "introduction/introduction.tex" 1793267982 24 0724ce7a131568ad239c1aac91dfb03b ""
-  "main.aux" 1793268002 3717 0843f1bde489f64ff3ffc4440779119b "pdflatex"
-  "main.bbl" 1793267980 6169 60eb870413204e25539cc6e349ff4283 "bibtex main"
-  "main.tex" 1793268001 687 1dda77cdc61e6e172c634a69912c0cd7 ""
-  "methodology/Method_1.tex" 1792485801 15618 44b01b34d4e98be59a3bfb464b1c5c5a ""
-  "overview/abstract_en.tex" 1793267816 1178 ea0c9df3edad3d2e1cb040fc3672b452 ""
+  "c:/Users/HP Omen/Desktop/SOTA/sota/thesis-doc-main/DOAN2022/main.tex" 1793352891 687 1dda77cdc61e6e172c634a69912c0cd7 ""
+  "introduction/introduction.tex" 1793362728 3412 dfd0671e0c02827da901401f37b0a37b ""
+  "main.aux" 1793362729 4471 d526859ee61e4952852aa648a05113b1 "pdflatex"
+  "main.bbl" 1793362711 8984 13e0343f8689e6936a6c0fd27729d277 "bibtex main"
+  "main.tex" 1793352891 687 1dda77cdc61e6e172c634a69912c0cd7 ""
+  "methodology/Method_1.tex" 1793352879 15606 a4c1698d1050e52ee011c5fd3b7da53c ""
+  "overview/abstract_en.tex" 1793345070 1177 6ac41a36c7fbe37f29d0c37ed465520d ""
   (generated)
   "main.aux"
   "main.log"

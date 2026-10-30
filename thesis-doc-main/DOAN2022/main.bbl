@@ -21,6 +21,67 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{mason2018toward}
+M.~T. Mason, ``Toward robotic manipulation,'' \emph{Annual Review of Control,
+  Robotics, and Autonomous Systems}, vol.~1, pp. 1--28, 2018.
+
+\bibitem{bicchi2000robotic}
+A.~Bicchi and V.~Kumar, ``Robotic grasping and contact: A review,'' in
+  \emph{Proceedings of the IEEE International Conference on Robotics and
+  Automation}, vol.~1, 2000, pp. 348--353.
+
+\bibitem{lynch1996nonprehensile}
+K.~M. Lynch, ``Nonprehensile robotic manipulation: Controllability and
+  planning,'' Ph.D. dissertation, Carnegie Mellon University, Pittsburgh, PA,
+  1996.
+
+\bibitem{lynch1999dynamic}
+K.~M. Lynch and M.~T. Mason, ``Dynamic nonprehensile manipulation:
+  Controllability, planning, and experiments,'' \emph{The International Journal
+  of Robotics Research}, vol.~18, no.~1, pp. 64--92, 1999.
+
+\bibitem{mason1986mechanics}
+M.~T. Mason, ``Mechanics and planning of manipulator pushing operations,''
+  \emph{The International Journal of Robotics Research}, vol.~5, no.~3, pp.
+  53--71, 1986.
+
+\bibitem{ozaki1997distributed}
+K.~Ozaki, H.~Asama, and I.~Endo, ``Distributed and cooperative object pushing
+  by multiple mobile robots based on communication,'' \emph{Advanced Robotics},
+  vol.~11, no.~5, pp. 501--517, 1997.
+
+\bibitem{tuci2018cooperative}
+E.~Tuci, M.~H.~M. Alkilabi, and O.~Akanyeti, ``Cooperative object transport in
+  multi-robot systems: A review of the state-of-the-art,'' \emph{Frontiers in
+  Robotics and AI}, vol.~5, p.~59, 2018.
+
+\bibitem{rosenfelder2024force}
+M.~Rosenfelder, H.~Ebel, and P.~Eberhard, ``Force-based organization and
+  control scheme for the non-prehensile cooperative transportation of
+  objects,'' \emph{Robotica}, vol.~42, no.~2, pp. 611--624, 2024.
+
+\bibitem{wang2016kinematic}
+Z.~Wang and M.~Schwager, ``Kinematic multi-robot manipulation with no
+  communication using force feedback,'' in \emph{2016 IEEE International
+  Conference on Robotics and Automation (ICRA)}, 2016, pp. 427--432.
+
+\bibitem{nguyen2026dnpush}
+D.~A. Nguyen, D.~H. Pham, and T.~D. Ngo, ``{DNPush}: Distributed nonparallel
+  pushing force control of multi-robot systems for object transportation,''
+  2026.
+
+\bibitem{cosgun2011push}
+A.~Cosgun, T.~Hermans, V.~Emeli, and M.~Stilman, ``Push planning for object
+  placement on cluttered table surfaces,'' in \emph{2011 IEEE/RSJ International
+  Conference on Intelligent Robots and Systems}, 2011, pp. 4627--4632.
+
+\bibitem{nguyen2024distributed}
+D.~A. Nguyen, N.~M.~D. Le, N.~H. Nguyen, P.~D. Hung, V.~A. Ho, and T.~D. Ngo,
+  ``Distributed cascade force control of soft-tactile-based multi-robot system
+  for object transportation,'' in \emph{2024 IEEE/SICE International Symposium
+  on System Integration (SII)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
+  2024, pp. 398--403.
+
 \bibitem{Schedlinski2001Survey}
 C.~Schedlinski and M.~Link, ``A survey of current inertia parameter
   identification methods,'' \emph{Mechanical Systems and Signal Processing},

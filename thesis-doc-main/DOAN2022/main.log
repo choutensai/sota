@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.8.4)  29 OCT 2026 17:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.8.4)  30 OCT 2026 19:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -283,18 +283,18 @@ LaTeX Warning: Reference `fig:feasible_search_space' on page 3 undefined on inpu
 LaTeX Font Info:    Trying to load font information for T1+pcr on input line 204.
  (C:\Program Files\MiKTeX\tex/latex/psnfss\t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)) (Result/result.tex
-<Result/figures/formation.png, id=28, 405.01312pt x 349.80687pt>
+)) [4] (Result/result.tex
+<Result/figures/formation.png, id=31, 405.01312pt x 349.80687pt>
 File: Result/figures/formation.png Graphic file (type png)
 <use Result/figures/formation.png>
 Package pdftex.def Info: Result/figures/formation.png  used on input line 7.
 (pdftex.def)             Requested size: 214.20154pt x 185.00711pt.
-<Result/figures/estimation_error.png, id=30, 1148.29pt x 794.97pt>
+<Result/figures/estimation_error.png, id=33, 1148.29pt x 794.97pt>
 File: Result/figures/estimation_error.png Graphic file (type png)
 <use Result/figures/estimation_error.png>
 Package pdftex.def Info: Result/figures/estimation_error.png  used on input line 17.
 (pdftex.def)             Requested size: 252.0pt x 174.45724pt.
-) [4] (main.bbl)
+) (main.bbl [5 <./Result/figures/formation.png> <./Result/figures/estimation_error.png (PNG copy)>])
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -306,7 +306,7 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[5 <./Result/figures/formation.png> <./Result/figures/estimation_error.png (PNG copy)>] (main.aux)
+[6] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
@@ -317,17 +317,17 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4395 strings out of 467871
- 68147 string characters out of 5428436
- 493359 words of memory out of 5000000
- 33191 multiletter control sequences out of 15000+600000
+ 4407 strings out of 467871
+ 68386 string characters out of 5428436
+ 493470 words of memory out of 5000000
+ 33203 multiletter control sequences out of 15000+600000
  738861 words of font info for 163 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,10n,65p,2599b,278s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (5 pages, 448591 bytes).
+Output written on main.pdf (6 pages, 452487 bytes).
 PDF statistics:
- 123 PDF objects out of 1000 (max. 8388607)
+ 126 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

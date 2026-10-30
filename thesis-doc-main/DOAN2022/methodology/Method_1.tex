@@ -115,10 +115,10 @@ $
 \mathcal{R}
 =
 \left\{
-\mathbf{p}-r_R\mathbf{n}(\mathbf{p})
+\mathbf{r}=\mathbf{p}-r_R\mathbf{n}(\mathbf{p})
 \;\middle|\;
 \mathbf{p}\in\mathcal{C},\;
-\operatorname{dist}\!\left(\mathbf{p}-r_R\mathbf{n}(\mathbf{p}),\,\mathcal{O}\right)\geq r_R
+\|\mathbf{r}-\mathbf{q}\|\geq r_R,\ \forall\,\mathbf{q}\in\mathcal{O}
 \right\},
 $
 where $\mathbf{n}(\mathbf{p})$ is the inward unit normal at $\mathbf{p}$ and $\mathcal{O}$ denotes the region occupied by the object. For a concave vertex with free-space angle $\alpha<\pi$, this is equivalent to replacing the margin $d_s$ at that vertex by $\max\left(d_s,\,r_R\cot(\alpha/2)\right)$, whereas no trimming is required for convex polygons. The formation synthesis is carried out directly in terms of the robot positions $\mathbf{r}=[\mathbf{r}_1^T,\ldots,\mathbf{r}_N^T]^T\in\mathbb{R}^{2N}$, and the feasible configuration space $\mathcal{P}$ is the set of all configurations $\mathbf{r}$ whose robot positions all lie in $\mathcal{R}$. The corresponding contact points are recovered as $\mathbf{p}_i=\mathbf{r}_i+r_R\mathbf{n}_i$. The resulting feasible search space is illustrated in Fig.~\ref{fig:feasible_search_space}. % TODO: add figure
