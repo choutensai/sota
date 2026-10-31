@@ -1,4 +1,5 @@
 \section{Results}
+\label{sec:results}
 In this simulation experiment, we consider a team of $N = 6$ robots with radius $r_R = 0.15$\,m and pushing force bounds $f_{\min} = 1$\,N and $f_{\max} = 10$\,N, which cooperatively perform an estimation task to obtain the CoM of a U-shaped object. The object has a mass of $m = 3$\,kg and a moment of inertia $I = 0.1$\,kg$\cdot$m$^2$. First, the formation synthesis problem is addressed using ALPSO to determine the optimal robot configuration. The obtained formation is illustrated in Fig.~\ref{fig:formation} and achieves a robustness of $J_r = 5.66$\,N$\cdot$m.
 After the robots move to their designated positions, each robot independently solves the quadratic programming problem to determine its pushing force while maintaining zero resultant force and generating a torque close to the desired value $\tau_d$. The resulting pushing forces are also annotated in Fig.~\ref{fig:formation}. The pushing forces of robots R1 to R6 are $1.0$, $4.0$, $4.0$, $1.0$, $3.2$, and $3.2$\,N, respectively, yielding zero net force and a torque of $2.93$\,N$\cdot$m.
 

@@ -82,25 +82,6 @@ D.~A. Nguyen, N.~M.~D. Le, N.~H. Nguyen, P.~D. Hung, V.~A. Ho, and T.~D. Ngo,
   on System Integration (SII)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE,
   2024, pp. 398--403.
 
-\bibitem{Schedlinski2001Survey}
-C.~Schedlinski and M.~Link, ``A survey of current inertia parameter
-  identification methods,'' \emph{Mechanical Systems and Signal Processing},
-  vol.~15, no.~1, pp. 189--211, 2001.
-
-\bibitem{liu2022inertialsurvey}
-H.~Liu \emph{et~al.}, ``Estimation and exploitation of objects' inertial
-  parameters in robotic grasping and manipulation: A survey,'' \emph{IEEE
-  Transactions on Automation Science and Engineering}, 2022.
-
-\bibitem{Chien1986Identification}
-C.-H. Chien and J.~K. Aggarwal, ``Identification of 3d objects from multiple
-  silhouettes using quadtrees/octrees,'' \emph{Computer Vision, Graphics, and
-  Image Processing}, vol.~36, pp. 256--273, 1986.
-
-\bibitem{Mirtich1996MassProperties}
-B.~Mirtich, ``Fast and accurate computation of polyhedral mass properties,''
-  \emph{Journal of Graphics Tools}, vol.~1, no.~2, pp. 31--50, 1996.
-
 \bibitem{Khosla1985Parameter}
 P.~K. Khosla and T.~Kanade, ``Parameter identification of robot dynamics,'' in
   \emph{Proceedings of the 24th IEEE Conference on Decision and Control}, 1985,
@@ -149,11 +130,6 @@ A.~Franchi, A.~Petitti, and A.~Rizzo, ``Distributed estimation of the inertial
   mobile manipulation of an unknown load using noisy measurements,''
   \emph{Robotica}, vol.~34, no.~3, pp. 444--461, 2016.
 
-\bibitem{Mason1986Pushing}
-M.~T. Mason, ``Mechanics and planning of manipulator pushing operations,''
-  \emph{The International Journal of Robotics Research}, vol.~5, no.~3, pp.
-  53--71, 1986.
-
 \bibitem{Nowak2008Generalized}
 R.~Nowak, ``Generalized binary search,'' in \emph{2008 46th Annual Allerton
   Conference on Communication, Control, and Computing}.\hskip 1em plus 0.5em
@@ -176,6 +152,30 @@ M.~Uemura, S.~Tsujikawa, M.~Suefuji, and H.~Arita, ``Dynamic estimation of an
   object's center-of-mass direction: A novel control method for robotic
   interaction in uncertain environments,'' \emph{Advanced Robotics}, vol.~38,
   no.~22, pp. 1567--1578, 2024.
+
+\bibitem{Schedlinski2001Survey}
+C.~Schedlinski and M.~Link, ``A survey of current inertia parameter
+  identification methods,'' \emph{Mechanical Systems and Signal Processing},
+  vol.~15, no.~1, pp. 189--211, 2001.
+
+\bibitem{liu2022inertialsurvey}
+H.~Liu \emph{et~al.}, ``Estimation and exploitation of objects' inertial
+  parameters in robotic grasping and manipulation: A survey,'' \emph{IEEE
+  Transactions on Automation Science and Engineering}, 2022.
+
+\bibitem{Chien1986Identification}
+C.-H. Chien and J.~K. Aggarwal, ``Identification of 3d objects from multiple
+  silhouettes using quadtrees/octrees,'' \emph{Computer Vision, Graphics, and
+  Image Processing}, vol.~36, pp. 256--273, 1986.
+
+\bibitem{Mirtich1996MassProperties}
+B.~Mirtich, ``Fast and accurate computation of polyhedral mass properties,''
+  \emph{Journal of Graphics Tools}, vol.~1, no.~2, pp. 31--50, 1996.
+
+\bibitem{Mason1986Pushing}
+M.~T. Mason, ``Mechanics and planning of manipulator pushing operations,''
+  \emph{The International Journal of Robotics Research}, vol.~5, no.~3, pp.
+  53--71, 1986.
 
 \bibitem{Gao2023HighSpeed}
 Z.~Gao, A.~Elibol, and N.~Y. Chong, ``Estimating the center of mass of an
